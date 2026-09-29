@@ -10,8 +10,8 @@
 | Build | Vite | Fast local iteration and a static production bundle. |
 | Styling | Tailwind CSS plus a few purpose-built components | Responsive editorial layout. Add a component library only when repeated interaction warrants it. |
 | Content | One YAML file per session in Git | Reviewable programme edits without a CMS or runtime API. |
-| Validation | Zod and cross-record checks at build time | Prevent invalid statuses, dates, IDs, and presenter references from reaching the site. |
-| Hosting | GitHub Pages via GitHub Actions, if the timeline is approved for public access | Static delivery from this repository. |
+| Validation | Zod and cross-record checks at build time | Prevent invalid statuses, dates, and duplicate IDs from reaching the site. |
+| Hosting | GitHub Pages via GitHub Actions | The programme and session details are public; static delivery from this repository is suitable. |
 | Backend, login, database | None for V1 | Browsing the season requires no personal data or server state. |
 
 This choice favors contributor familiarity and the planned voting phase. For a single read-only timeline, Astro would also work well; it can be reconsidered before scaffolding if the team prefers a content-first framework. Avoid introducing Astro and React together merely for this one view.
@@ -25,7 +25,6 @@ content/
   season.yaml
   sessions/
     agent-evaluation.yaml
-  presenters.yaml
 src/
   content/
     schema.ts
@@ -46,19 +45,18 @@ format: [workshop]
 status: proposed
 targetMonth: "2027-03"
 summary: Design an evaluation set and inspect agent failure modes.
-presenterIds: []
 editorialOrder: 2
 ```
 
 Tracks: `foundations`, `engineering`, `deep-dive`. Draft domains: `understand-ai`, `build-with-ai`, `develop-with-ai`, `operate-ai`, `frontier`; test these against the real session inventory before freezing them. Formats: `talk`, `workshop`, `demo`, `lab`, `discussion`. Editorial statuses: `proposed`, `scheduled`, `completed`, `cancelled`.
 
-A proposal has a target month, without a fabricated day. A scheduled session needs a confirmed `startsAt` instant with an explicit offset; format it for `Europe/Luxembourg`. Derive its displayed month from that instant instead of maintaining a second month field. `completed` is an editorial update, while past/upcoming is computed from time. A cancelled session retains its record and, when appropriate, a reason. Do not infer presenters or dates from a brainstorm.
+A proposal has a target month, without a fabricated day. A scheduled session needs a confirmed `startsAt` instant with an explicit offset; format it for `Europe/Luxembourg`. Derive its displayed month from that instant instead of maintaining a second month field. `completed` is an editorial update, while past/upcoming is computed from time. A cancelled session retains its record and, when appropriate, a reason. Do not infer dates from a brainstorm. Presenter names, biographies, and IDs are not part of the V1 content schema or public page.
 
 The page can calculate the next confirmed scheduled session in a small browser function using the current clock, so the highlight does not become stale between static builds. The rest of the timeline remains a static bundle. V1 needs no client router or separate session pages. On mobile, use month sections that retain the three track labels; provide semantic list markup alongside any visual grid.
 
-CI checks the content schema, duplicate IDs, cross-record references, status-specific fields, TypeScript, and the production build. Test the date/status logic and keyboard access where errors would affect navigation. Choose compatible stable versions during scaffolding and commit a lockfile with a pinned CI runtime.
+CI checks the content schema, duplicate IDs, status-specific fields, TypeScript, and the production build. Test the date/status logic and keyboard access where errors would affect navigation. Choose compatible stable versions during scaffolding and commit a lockfile with a pinned CI runtime.
 
-For the project Pages URL, set Vite `base` to `/ai-club-season-26-27/`. This repository is public; publish only approved programme metadata. Internal meeting links, client details, private contact information, and unpublished material stay out of both source files and build output. Pages is a static host, not an authorization boundary.
+For the project Pages URL, set Vite `base` to `/ai-club-season-26-27/`. This repository is public. The programme and session details are intended for public reading, but editorial approval still precedes publication. Internal meeting links, client details, private contact information, presenter identity, and unpublished material stay out of both source files and build output. Pages is a static host, not an authorization boundary.
 
 ## V2: SFEIR-account voting
 

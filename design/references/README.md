@@ -1,6 +1,6 @@
 # Signal Index layout references
 
-These five images are **visual references**, generated on 29 September 2026 for AI Club / SFEIR Luxembourg. They are not screenshots of an implemented application. Session names, months, counts, statuses, links, and media are illustrative placeholders; the real season comes from validated content files.
+These five images are **visual references**, generated on 29 September 2026 for AI Club / SFEIR Luxembourg. They are not screenshots of an implemented application. Session names, months, counts, statuses, presenter names, links, and media are illustrative placeholders; the real season comes from validated content files. V1 publishes programme and session details without presenter identity.
 
 | Reference | Phase | What to evaluate |
 | --- | --- | --- |

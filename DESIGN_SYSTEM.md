@@ -59,7 +59,7 @@ Use a maximum content width of 80rem. Gutters: 1rem on mobile, 1.5rem on tablet,
 2. Bold masthead: AI CLUB, SFEIR LUXEMBOURG, SEASON 26–27, one-line promise.
 3. Whole-season index: nine months as columns, three tracks as rows. Cells contain a count or presence mark and link to a month/track section. Empty cells remain empty.
 4. Next confirmed event: a smaller strip derived from verified dates, with a clear fallback when none exists.
-5. Month chapters: full session titles, short summaries, format, track, explicit status, confirmed date/presenter where available.
+5. Month chapters: full session titles, short summaries, format, track, explicit status, and confirmed date where available. No presenter identity in V1.
 
 The [desktop reference](design/references/season-desktop.webp) demonstrates hierarchy. Its counts and titles are illustrative. Do not hard-code them.
 

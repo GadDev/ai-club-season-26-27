@@ -34,7 +34,7 @@ The [original Signal Index concept](design/references/signal-index-concept.webp)
 1. The desktop season index may span nine months, but each cell holds a count or compact marker, not a paragraph. A blank cell is an honest gap.
 2. On mobile, the index becomes a month jump grid and the three tracks stack inside each month. Never shrink a desktop matrix to phone width.
 3. The bold masthead must yield quickly to the season. Limit heavy texture to the masthead or card corner, with no texture behind small text.
-4. Proposed, scheduled, completed, and cancelled are written states. A proposed month does not pretend to be a confirmed date.
+4. Proposed, scheduled, completed, and cancelled are written states. A proposed month does not pretend to be a confirmed date. Presenter names visible in a concept image are placeholders, not V1 content.
 5. Do not put voting or replay controls on the V1 timeline before those capabilities exist.
 6. Keep sample titles and counts in these images clearly separate from the real programme data.
 

@@ -4,11 +4,11 @@ A home for the SFEIR Luxembourg AI Club programme from **October 2026 through Ju
 
 The release sequence is deliberately small:
 
-1. **Timeline:** display the whole season, distinguishing proposed topics from confirmed events.
+1. **Timeline:** publicly display the whole season and session details, distinguishing proposed topics from confirmed events. No account or presenter profiles in V1.
 2. **Voting:** let each eligible SFEIR account holder choose one proposed topic under clear rules.
 3. **Materials:** provide approved presentations and replays, initially as links.
 
-The repository is at **V0: map the programme**. It contains product documents; no schedule, application code, voting system, media hosting, or deployment exists yet.
+The repository is at **V0: map the programme**. It contains product documents and an editorial season board. The board has proposals, but no verified confirmed events. No application code, voting system, media hosting, or deployment exists yet.
 
 - [Mission](MISSION.md): purpose, tracks, and release sequence.
 - [Constitution](CONSTITUTION.md): product and editorial principles.
@@ -16,5 +16,6 @@ The repository is at **V0: map the programme**. It contains product documents; n
 - [Art direction](ART_DIRECTION.md): explored visual branches and the selected Signal Index direction.
 - [Design system](DESIGN_SYSTEM.md): the selected Signal Index colours, typography, layouts, and accessibility rules; [CSS tokens](design/tokens.css).
 - [Layout references](design/references/README.md): desktop, mobile, future voting and replay concepts.
+- [Season board](SEASON_BOARD.md): eight tentative month placements, 22 more candidate pairs, prior coverage, and a separate confirmed-event lane.
 
-Next: inventory delivered, planned, and brainstormed sessions, then create a first October–June timeline dataset with explicit status and no invented dates or presenters.
+Next: review the proposed placements with the organizers and verify any existing event records. Convert approved public entries to validated session files, then build the V1 timeline against real content.

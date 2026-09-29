@@ -16,11 +16,11 @@ The labels describe familiarity with a subject, not seniority. A month may have 
 
 ### V0 — Map the programme
 
-Inventory sessions already delivered, planned, and brainstormed. Remove duplicates, verify dates and presenters, and distinguish a proposed month from a confirmed event. The content is useful to the organizers before a UI exists.
+Inventory sessions already delivered, planned, and brainstormed. Remove duplicates, verify dates and publication approval, and distinguish a proposed month from a confirmed event. The content is useful to the organizers before a UI exists.
 
 ### V1 — Display the season timeline
 
-One read-only, accessible, mobile-friendly timeline from October 2026 to June 2027. It shows the month, track, title, short summary, format, and status for each session. Show a confirmed date and presenter only when verified. Highlight the next confirmed event using the current time.
+One public, read-only, accessible, mobile-friendly timeline from October 2026 to June 2027. It shows the month, track, title, short summary, format, and status for each session. Show a confirmed date only when verified. Highlight the next confirmed event using the current time. Presenter names and profiles are outside V1, even when the programme and session details are public.
 
 V1 succeeds when a visitor can answer: What is planned for the whole season? Which sessions fit my subject background? What is confirmed, and what is still proposed? No account is needed to browse the timeline.
 
@@ -32,7 +32,7 @@ Eligible SFEIR account holders can each choose one proposed topic and help decid
 
 Add presentations and replay access where publication rights and audience permissions allow it. Start with links to approved material; introduce managed file or video hosting only when there is a real collection and an agreed access policy.
 
-Presenter profiles, richer discovery, learning trails, and SFEIR Institute connections remain possible later directions. They are not prerequisites for the timeline.
+Presenter names and profiles can be added after the first timeline release, once each presenter approves the public credit and its wording. Richer discovery, learning trails, and SFEIR Institute connections remain possible later directions. They are not prerequisites for the timeline.
 
 ## Success
 
