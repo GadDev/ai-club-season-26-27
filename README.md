@@ -1,11 +1,17 @@
 # AI Club · Season 2026–2027
 
-A home for the SFEIR Luxembourg AI Club programme from **October 2026 through June 2027**. The planned season will be visible in advance, with three parallel audience tracks: **Foundations (Beginner)**, **Engineering (Practitioner)**, and **Deep Dive (Advanced)**.
+A home for the SFEIR Luxembourg AI Club programme from **October 2026 through June 2027**, with three parallel tracks: **Foundations (Beginner)**, **Engineering (Practitioner)**, and **Deep Dive (Advanced)**.
 
-The repository is at **V0: map the programme**. These documents define the application; no event schedule, application code, or deployment is published yet. Proposed topics, confirmed sessions, and past events will be distinguished when the session inventory is added.
+The release sequence is deliberately small:
 
-- [Mission](MISSION.md): audience, purpose, and staged outcomes.
-- [Constitution](CONSTITUTION.md): product and editorial decisions.
-- [Technical stack](TECH_STACK.md): implementation choice and draft content model.
+1. **Timeline:** display the whole season, distinguishing proposed topics from confirmed events.
+2. **Voting:** let eligible SFEIR account holders choose among proposals under agreed rules.
+3. **Materials:** provide approved presentations and replays, initially as links.
 
-Next: inventory the sessions already delivered, planned, and brainstormed, then build a first October–June season board with explicit status and no invented dates or presenters.
+The repository is at **V0: map the programme**. It contains product documents; no schedule, application code, voting system, media hosting, or deployment exists yet.
+
+- [Mission](MISSION.md): purpose, tracks, and release sequence.
+- [Constitution](CONSTITUTION.md): product and editorial principles.
+- [Technical stack](TECH_STACK.md): V1 architecture and later system boundaries.
+
+Next: inventory delivered, planned, and brainstormed sessions, then create a first October–June timeline dataset with explicit status and no invented dates or presenters.
