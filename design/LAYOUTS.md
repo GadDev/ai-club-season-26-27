@@ -17,21 +17,21 @@ The next-event panel is secondary to the season overview. Do not let a giant her
 
 | Viewport | Index | Month chapters | Gutters |
 | --- | --- | --- | --- |
-| `<48rem` | Three-column month jump grid, three rows; each month is named with year available in label | Tracks stack within each month, full text visible | 16px |
+| `<48rem` | Native month selector and three track/topic previews; full month/year label | Tracks stack within each month, full text visible | 16px |
 | `48–79.99rem` | Three sets of three months; tracks remain clearly labelled in each set | One or two card columns based on space | 24px |
-| `≥80rem` | Nine month columns × three track rows, compact counts/marks only | Up to three card columns if summaries retain a readable width | 48px |
+| `≥80rem` | Nine month columns × three track rows, SVG topic symbols and short labels | Up to three card columns if summaries retain a readable width | 48px |
 
 At 200% browser zoom, the effective CSS viewport becomes narrower; allow the layout to reflow. The grid is not a wide table squashed to phone size. No horizontal page scrolling is required to reach a session.
 
 ## Desktop anatomy
 
-The masthead can use a two-column editorial composition: wordmark and promise on one side, season numerals or a single cut-paper accent on the other. Below, the index uses a fixed track-label column plus nine flexible month columns. Only short month labels and counts appear inside cells. Full titles live in the chapters. The row band names the track on every line; do not rely on color alone. Empty cells contain an em dash or equivalent plain mark with an accessible empty label, not a link.
+The masthead can use a two-column editorial composition: wordmark and promise on one side, season numerals or a single cut-paper accent on the other. Below, the index uses a 15.5% track-label column plus nine equal month columns. Uppercase condensed month labels sit above monochrome SVGs and short topic labels. The season year appears once in the programme notice. Full titles live in the chapters. The row band names the track on every line; do not rely on color alone. Empty cells contain “No session planned”, not a link. Cells grow to fit multiple topic labels without clipping; talk/workshop pairs appear once.
 
 Each month chapter begins with a full month/year heading and flows into three track groups. Cards use normal document flow; use grid for placement without changing DOM order. The next event card may span columns but must never pull a proposed topic into a confirmed-event slot.
 
 ## Mobile anatomy
 
-The masthead reduces in height while retaining the text lockup, compact season numerals, and a cropped paper/ink fragment. The month jump grid uses three equal columns with comfortable targets; each label remains legible in French and English. The month chapters then stack three track bands and their cards. All groups are expanded by default. The generated mobile image suggests chevrons, but a collapsed accordion is **not** the V1 rule.
+The masthead reduces in height while retaining the text lockup, compact season numerals, and a cropped paper/ink fragment. The native month selector names all nine months and defaults to October. Three compact rows show the selected month’s track names, levels, topic symbols and labels; each populated row links to its track chapter. A separate link jumps to the entire selected month. The month chapters then stack three track bands and their cards. All groups are expanded by default. The generated mobile image suggests chevrons, but a collapsed accordion is **not** the V1 rule.
 
 Keep actions beneath readable summaries instead of floating them over imagery. A decorative texture strip can appear at the top of a section, but not behind metadata. The next event fallback remains visible as a compact notice after the overview and before the detailed chapters. Reserve the larger event panel for a confirmed booking.
 
@@ -67,3 +67,7 @@ Visual fidelity targets the reference's hierarchy, proportions, typography, surf
 The user requires exact fidelity to `references/signal-index-concept.webp`. `SiteHeader` renders that source directly and clips it with CSS to its original header bounds: 1672 × 281 pixels. The composition retains the original 1672 × 281 coordinate system. `src/assets/hero-lettering.svg` overlays traced Bézier outlines on the original lettering to remove bitmap edge softness on high-density screens. The source image remains the texture layer. Scale both layers together; do not reposition lettering or substitute a similar font. Alternative text describes the artwork; the redundant vector overlay is decorative. Vector antialiasing changes edge pixels, so the earlier zero-pixel-difference claim applies only to the previous bitmap implementation. Navigation is a separate 44px-minimum-height row below the artwork, keeping readable links on mobile without altering the reference hero. The same artwork appears on every page.
 
 The optional `scripts/trace-hero.py` reproduces the committed outline asset using `potracer`, Pillow, NumPy, and SciPy. These are asset-authoring tools, not application or CI dependencies. The normal build uses the committed SVG. Native-size and 2× device-scale screenshots are checked during visual review.
+
+## Season grid reference update
+
+The grid uses a 64px header, condensed uppercase month headings, 14px monospaced topic labels, fine paper-colored rules and full-color track bands. At desktop width the first column occupies 15.5%, matching the reference’s proportions. Topic links have a 126px minimum height and grow for the real programme; the three multi-topic Engineering cells must expose both topics. At tablet widths the existing three groups of three months remain. The top-left cell restores the diagonal arrow and “The season at a glance” lockup. Hover underlines text; keyboard focus outlines the entire cell. No glyph conveys booking certainty.

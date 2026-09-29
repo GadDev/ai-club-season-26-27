@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-for (const width of [360, 768, 1440]) {
+for (const width of [360, 768, 1280, 1440]) {
   test(`timeline is readable and navigable at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     const errors: string[] = [];
@@ -50,10 +50,11 @@ for (const width of [360, 768, 1440]) {
       await expect(page.locator('[id="2026-10-foundations"]')).toBeFocused();
     }
     if (width === 360) {
-      await page
-        .getByRole("navigation", { name: "Jump to month" })
-        .getByRole("link", { name: /Jun/ })
-        .click();
+      await page.getByLabel("Explore a month").selectOption("2027-06");
+      await expect(page.locator(".mobile-track-topics")).toContainText(
+        "When to use AI",
+      );
+      await page.getByRole("link", { name: "View June 2027" }).click();
       await expect(page).toHaveURL(/#month-2027-06$/);
       await expect(page.locator("#month-2027-06")).toBeFocused();
     }
@@ -146,4 +147,32 @@ test("hero lettering renders as vectors on Retina displays", async ({
     .locator(".reference-hero")
     .screenshot({ path: "test-results/hero-retina.png" });
   await context.close();
+});
+
+// Ensure the index does not hide the second pair or double-count a talk/workshop.
+test("season index exposes topics and both October engineering pairs", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1672, height: 1000 });
+  await page.goto("./");
+  const matrix = page.locator(".wide-index .season-matrix");
+  await expect(matrix.locator(".topic-labels > span")).toHaveCount(30);
+  const october = matrix.getByRole("link", {
+    name: /October 2026, Engineering/,
+  });
+  await expect(october).toContainText("AI architecture");
+  await expect(october).toContainText("Human oversight");
+  await expect(october).toContainText("2 topics");
+  await expect(october).toHaveAccessibleName(/4 sessions$/);
+  await page.evaluate(() => document.fonts.ready);
+  await matrix.screenshot({ path: "test-results/season-grid-desktop.png" });
+  await october.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator('[id="2026-10-engineering"]')).toBeFocused();
+  await page.setViewportSize({ width: 360, height: 1000 });
+  await page.goto("./");
+  await page.evaluate(() => document.fonts.ready);
+  await page
+    .locator(".mobile-season-index")
+    .screenshot({ path: "test-results/season-grid-mobile.png" });
 });

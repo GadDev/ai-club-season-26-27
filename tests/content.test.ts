@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validateSessions } from "../src/content/schema";
+import { validateSessions, validateTopics } from "../src/content/schema";
 import { sessionMonth, nextEvent } from "../src/content/model";
 import data from "../src/content/generated.json";
 const proposal = {
@@ -96,6 +96,26 @@ describe("editorial data boundaries", () => {
       validateSessions([
         { ...event("2026-10-05T10:00:00Z", "cancelled"), targetMonth },
       ]),
+    ).toThrow();
+  });
+});
+
+describe("season index editorial metadata", () => {
+  it("rejects missing, orphaned and invalid topic descriptions", () => {
+    const sessions = validateSessions(data.sessions);
+    expect(Object.keys(validateTopics(data.topics, sessions))).toHaveLength(30);
+    const { P01, ...missing } = data.topics;
+    expect(() => validateTopics(missing, sessions)).toThrow(
+      "Missing topic metadata: P01",
+    );
+    expect(() =>
+      validateTopics({ ...data.topics, P99: P01 }, sessions),
+    ).toThrow("Topic without sessions: P99");
+    expect(() =>
+      validateTopics(
+        { ...data.topics, P01: { ...P01, symbol: "unknown" } },
+        sessions,
+      ),
     ).toThrow();
   });
 });

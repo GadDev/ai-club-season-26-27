@@ -13,3 +13,9 @@ Run `npm run content:validate` after edits, or restart `npm run dev`. This check
 - Presenter fields, private links, and unknown properties are rejected by the strict schema.
 
 All 30 pairs are visible as proposals; this is a programming backlog, not a promise to run 60 events. Prior-coverage notes remain in the editorial board. Changes merged into `main` are published by the GitHub Pages workflow after validation and browser checks.
+
+## Season grid labels and symbols
+
+`topics.yaml` stores one short `label` (up to 32 characters) and `symbol` per `pairId`. Use a concise description of the real topic, not the reference image’s sample curriculum. Both parts of a pair share the label; dates and statuses continue to come from their individual session files. The schema lists supported geometric symbols, drawn in `src/TopicSymbol.tsx`.
+
+Add topic metadata when adding a new pair; remove it only when its last session is removed. Validation rejects missing/orphaned pair metadata, unknown symbols and empty labels. Placement is derived from session records, so moving a pair updates the grid automatically. Multiple pairs in the same month/track remain visible. Unpaired sessions use their full title and a neutral circle.

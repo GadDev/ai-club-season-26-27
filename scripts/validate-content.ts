@@ -1,6 +1,10 @@
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { parse } from "yaml";
-import { seasonSchema, validateSessions } from "../src/content/schema";
+import {
+  seasonSchema,
+  validateSessions,
+  validateTopics,
+} from "../src/content/schema";
 const season = seasonSchema.parse(
   parse(await readFile("content/season.yaml", "utf8")),
 );
@@ -17,9 +21,13 @@ const records = await Promise.all(
   }),
 );
 const sessions = validateSessions(records);
+const topics = validateTopics(
+  parse(await readFile("content/topics.yaml", "utf8")),
+  sessions,
+);
 await writeFile(
   "src/content/generated.json",
-  JSON.stringify({ season, sessions }, null, 2) + "\n",
+  JSON.stringify({ season, sessions, topics }, null, 2) + "\n",
 );
 console.log(
   `Validated ${sessions.length} sessions (${sessions.filter((s) => s.status === "scheduled").length} scheduled).`,
