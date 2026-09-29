@@ -1,3 +1,4 @@
+import heroLettering from "./assets/hero-lettering.svg";
 import heroReference from "../design/references/signal-index-concept.webp";
 
 export function SiteHeader({ page = "season" }: { page?: string }) {
@@ -6,6 +7,7 @@ export function SiteHeader({ page = "season" }: { page?: string }) {
       <div className="reference-hero">
         <img src={heroReference} width="1672" height="941" fetchPriority="high"
           alt="AI Club. Season 26–27. Ideas. Practice. Deeper understanding. The Signal Index: a nine-month journey from curiosity to real impact." />
+        <img className="hero-lettering" src={heroLettering} alt="" aria-hidden="true" width="1672" height="281" />
       </div>
       <nav className="reference-nav" aria-label="Main">
         <a className="reference-home" href="?">SFEIR / LUXEMBOURG</a>

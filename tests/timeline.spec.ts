@@ -108,8 +108,20 @@ test('hero preserves the original reference dimensions', async ({ page }) => {
   await page.setViewportSize({ width: 1672, height: 1000 });
   await page.goto('./');
   const hero = page.locator('.reference-hero');
-  await expect(hero.locator('img')).toBeVisible();
-  await hero.locator('img').evaluate((img: HTMLImageElement) => img.decode());
+  await expect(hero.locator('img').first()).toBeVisible();
+  await hero.locator('img').first().evaluate((img: HTMLImageElement) => img.decode());
   expect(await hero.boundingBox()).toMatchObject({x:0, y:0, width:1672, height:281});
+  await expect(hero.locator('.hero-lettering')).toBeVisible();
+  await hero.locator('.hero-lettering').evaluate((img: HTMLImageElement) => img.decode());
   await hero.screenshot({path:'test-results/hero-native.png'});
+});
+test('hero lettering renders as vectors on Retina displays', async ({ browser }) => {
+  const context = await browser.newContext({viewport:{width:1672,height:1000},deviceScaleFactor:2});
+  const page = await context.newPage();
+  await page.goto('http://127.0.0.1:4173/ai-club-season-26-27/');
+  const vector = page.locator('.hero-lettering');
+  await expect(vector).toHaveAttribute('src', /\.svg$/);
+  await vector.evaluate((img: HTMLImageElement) => img.decode());
+  await page.locator('.reference-hero').screenshot({path:'test-results/hero-retina.png'});
+  await context.close();
 });
