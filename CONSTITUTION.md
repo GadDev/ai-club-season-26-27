@@ -9,7 +9,7 @@
 7. **Favor practice and critical thinking.** Use examples, demonstrations, exercises, failure analysis, and trade-offs; avoid hype.
 8. **Keep content portable and accountable.** Use standard files, stable links, source and presenter credit, and reviewable corrections.
 9. **Build accessibility into V1.** Keyboard access, readable text, sufficient contrast, and a list equivalent to a visual timeline are required. Never rely on color alone.
-10. **Make voting fair when introduced.** Verify eligibility with SFEIR identity, enforce the agreed voting rule on the server, explain how choices affect selection, and retain only the information needed to administer and audit a vote. Do not expose individual choices publicly without an explicit reason and consent.
+10. **Make voting fair when introduced.** Verify eligibility with SFEIR identity, enforce one effective choice per eligible account on the server, explain how choices affect selection, and retain only the information needed to administer and audit a vote. Do not expose individual choices publicly without an explicit reason and consent.
 11. **Respect participants and presenters.** Avoid attendance surveillance, streaks, leaderboards, and personal scores. Presenter recognition is professional, not competitive.
 12. **Publish materials with permission.** Presentations and replays need author and participant permissions, an audience policy, and a reliable place to live. Do not treat a public link as access control.
 13. **Protect editorial independence.** Future SFEIR Institute links should be contextual and clearly identified.
