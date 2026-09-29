@@ -26,7 +26,7 @@ V1 succeeds when a visitor can answer: What is planned for the whole season? Whi
 
 ### V2 — Let eligible SFEIR members vote
 
-SFEIR account holders can choose among eligible proposed topics and help decide the programme. This phase requires verified identity, eligibility rules, a durable vote record, and a clear decision process. The exact voting window, one-choice rule, tie handling, and relationship between votes and the final programme must be agreed before implementation. A vote should never silently turn a proposal into a confirmed event.
+Eligible SFEIR account holders can each choose one proposed topic and help decide the programme. This phase requires verified identity, eligibility rules, a durable vote record, and a clear decision process. The voting window, whether a choice can be changed, tie handling, and relationship between votes and the final programme must be agreed before implementation. A vote should never silently turn a proposal into a confirmed event.
 
 ### V3 — Make sessions available afterward
 
