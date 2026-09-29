@@ -1,0 +1,10 @@
+id: "p10-workshop"
+pairId: "P10"
+title: "Make the Unstructured Structured"
+summary: "Proposed hands-on companion to “Structured Outputs: Turning LLMs Into Software Components”. The exercise and date are still being developed."
+track: "engineering"
+domain: "build-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-11"
+editorialOrder: 1

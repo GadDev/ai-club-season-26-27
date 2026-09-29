@@ -1,0 +1,10 @@
+id: "p20-workshop"
+pairId: "P20"
+title: "Debug the Broken AI System"
+summary: "Proposed hands-on companion to “AI Observability: What Is My AI Doing?”. The exercise and date are still being developed."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-04"
+editorialOrder: 1

@@ -1,0 +1,10 @@
+id: "p01-workshop"
+pairId: "P01"
+title: "Become the LLM: token, attention and prediction game"
+summary: "Proposed hands-on companion to “How Does an LLM Actually Work? Without the Maths”. The exercise and date are still being developed."
+track: "foundations"
+domain: "understand-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 1

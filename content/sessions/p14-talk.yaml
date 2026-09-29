@@ -1,0 +1,10 @@
+id: "p14-talk"
+pairId: "P14"
+title: "Local AI: What Can We Actually Run Ourselves?"
+summary: "Compare local and cloud model choices across privacy, performance, and cost."
+track: "engineering"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-01"
+editorialOrder: 0

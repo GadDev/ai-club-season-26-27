@@ -8,7 +8,29 @@ The release sequence is deliberately small:
 2. **Voting:** let each eligible SFEIR account holder choose one proposed topic under clear rules.
 3. **Materials:** provide approved presentations and replays, initially as links.
 
-The repository is at **V0: map the programme**. It contains product documents and an editorial season board. The board has proposals, but no verified confirmed events. No application code, voting system, media hosting, or deployment exists yet.
+The repository contains a **working V1 development slice**: a responsive nine-month timeline, 16 separate draft talk/workshop proposals, validated YAML content, and the Signal Index design. There are no verified scheduled events; the page says so explicitly. Public deployment is not enabled.
+
+## Run locally
+
+Use Node 24.19.0 (`.nvmrc`), then:
+
+```sh
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite, under `/ai-club-season-26-27/`. After editing YAML, restart the dev command to regenerate content.
+
+```sh
+npm run build
+npm test
+npx playwright install chromium
+npm run test:e2e
+```
+
+The build validates content and TypeScript before producing `dist/`. CI runs the build, date/status tests, and browser accessibility/navigation checks at mobile, tablet, and desktop widths. See [content editing](content/README.md).
+
+## Product and design
 
 - [Mission](MISSION.md): purpose, tracks, and release sequence.
 - [Constitution](CONSTITUTION.md): product and editorial principles.
@@ -18,4 +40,4 @@ The repository is at **V0: map the programme**. It contains product documents an
 - [Visual references](design/references/README.md): moodboard, one-sheet UI specimen, desktop and mobile pages, plus future voting and replay concepts.
 - [Season board](SEASON_BOARD.md): eight tentative month placements, 22 more candidate pairs, prior coverage, and a separate confirmed-event lane.
 
-Next: review the proposed placements with the organizers and verify any existing event records. Convert approved public entries to validated session files, then build the V1 timeline against real content.
+Next: review the draft programme, refine the implemented UI against the references, and enable GitHub Pages when the public content is ready.

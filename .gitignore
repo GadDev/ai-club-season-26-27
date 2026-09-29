@@ -1,0 +1,5 @@
+node_modules/
+dist/
+src/content/generated.json
+playwright-report/
+test-results/

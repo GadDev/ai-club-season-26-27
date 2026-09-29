@@ -1,0 +1,10 @@
+id: "p10-talk"
+pairId: "P10"
+title: "Structured Outputs: Turning LLMs Into Software Components"
+summary: "Explore how schemas and validation turn model responses into usable application data."
+track: "engineering"
+domain: "build-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-11"
+editorialOrder: 0

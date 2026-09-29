@@ -1,6 +1,6 @@
 # Technical stack
 
-**Decision status:** phase-based proposal, 29 September 2026. No application code or deployment exists yet.
+**Decision status:** V1 development slice implemented, 29 September 2026. The application builds locally and has CI checks; public deployment is not enabled.
 
 ## V1: season timeline
 
@@ -54,7 +54,7 @@ A proposal has a target month, without a fabricated day. A scheduled session nee
 
 The page can calculate the next confirmed scheduled session in a small browser function using the current clock, so the highlight does not become stale between static builds. The rest of the timeline remains a static bundle. V1 needs no client router or separate session pages. On mobile, use month sections that retain the three track labels; provide semantic list markup alongside any visual grid.
 
-CI checks the content schema, duplicate IDs, status-specific fields, TypeScript, and the production build. Test the date/status logic and keyboard access where errors would affect navigation. Choose compatible stable versions during scaffolding and commit a lockfile with a pinned CI runtime.
+CI checks the content schema, duplicate IDs, status-specific fields, TypeScript, and the production build. Test the date/status logic and keyboard access where errors would affect navigation. Dependencies are recorded in package-lock.json; Node 24.19.0 is pinned in .nvmrc for local work and CI.
 
 For the project Pages URL, set Vite `base` to `/ai-club-season-26-27/`. This repository is public. The programme and session details are intended for public reading, but editorial approval still precedes publication. Internal meeting links, client details, private contact information, presenter identity, and unpublished material stay out of both source files and build output. Pages is a static host, not an authorization boundary.
 

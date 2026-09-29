@@ -1,0 +1,10 @@
+id: "p02-workshop"
+pairId: "P02"
+title: "The Semantic Treasure Hunt"
+summary: "Proposed hands-on companion to “Embeddings: How AI Turns Meaning Into Coordinates”. The exercise and date are still being developed."
+track: "foundations"
+domain: "understand-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 1

@@ -1,0 +1,10 @@
+id: "p20-talk"
+pairId: "P20"
+title: "AI Observability: What Is My AI Doing?"
+summary: "Use traces and failure signals to investigate an AI system in production."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-04"
+editorialOrder: 0
