@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" fill="none">
+  <defs>
+    <filter id="ink" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".48" numOctaves="3" seed="26"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="discrete" tableValues="0 0 .2 .55"/></feComponentTransfer>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <clipPath id="paper"><path d="M80-30 228-30 413 450H270L255 419 259 409 244 393 245 382 230 360 235 351 219 330 222 319 205 298 208 288 193 263 195 253 180 231 181 220 167 199 170 188 155 168 158 159 141 136 143 125 125 99 129 91 113 67 114 54 99 33 101 21 87 1Z"/></clipPath>
+  </defs>
+  <path fill="#2348D8" d="M205-30h172l183 480H392Z"/>
+  <path fill="#F7F2E7" d="M80-30 228-30 413 450H270L255 419 259 409 244 393 245 382 230 360 235 351 219 330 222 319 205 298 208 288 193 263 195 253 180 231 181 220 167 199 170 188 155 168 158 159 141 136 143 125 125 99 129 91 113 67 114 54 99 33 101 21 87 1Z"/>
+  <path fill="#14212E" opacity=".75" d="m276 0 9 109-18 33 45-10-6 93 25-54 37 88-13-100 59 22-60-43-29-85 4 75-37-15 3-65Z M412 265l-6 50-31 21 42-9 33 65-14-75 40-30-48 20Z"/>
+  <path stroke="#14212E" stroke-width="2" opacity=".6" d="m231 25 201 364M237 183l149-47M298 294l155 37M353 26l-21 347"/>
+  <path fill="#14212E" filter="url(#ink)" d="M205-30h172l183 480H392Z"/>
+  <g clip-path="url(#paper)" opacity=".3"><path fill="#14212E" filter="url(#ink)" d="M70 0h370v420H70Z"/></g>
+</svg>

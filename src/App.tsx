@@ -138,10 +138,7 @@ export function App() {
               <h1>
                 AI CLUB<span className="sr-only"> — Season 2026–2027</span>
               </h1>
-              <p className="hero-note">
-                Same curiosity.
-                <br />A whole season of new perspectives.
-              </p>
+              <p className="hero-note">A whole season of new perspectives.</p>
             </div>
             <div className="season-number" aria-hidden="true">
               <span>26</span>
@@ -193,7 +190,7 @@ export function App() {
             ))}
           </nav>
         </section>
-        <aside className="next-event" aria-labelledby="next-title">
+        <aside className={`next-event ${next ? "" : "is-empty"}`} aria-labelledby="next-title">
           <div>
             <p className="eyebrow">NEXT CONFIRMED EVENT</p>
             <h2 id="next-title">
@@ -243,7 +240,7 @@ export function App() {
                     <section
                       key={t.id}
                       id={`${m}-${t.id}`}
-                      className="track-section"
+                      className={`track-section ${list.length ? "has-sessions" : "is-empty"}`}
                       aria-labelledby={`${m}-${t.id}-title`}
                       tabIndex={-1}
                     >
@@ -259,7 +256,7 @@ export function App() {
                         ) : (
                           <p className="empty-state">
                             No session planned yet.
-                            <span>Room for the next good idea.</span>
+
                           </p>
                         )}
                       </div>

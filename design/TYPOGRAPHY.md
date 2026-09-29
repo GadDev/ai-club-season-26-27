@@ -4,8 +4,8 @@ The typographic contrast does most of the art-direction work. One oversized cond
 
 | Role | Family | Weight | Typical use | Constraint |
 | --- | --- | --- | --- | --- |
-| Display | League Gothic | 400 | `AI CLUB`, `26–27`, month headings, short track headings | Short phrases only; never body copy |
-| Reading | IBM Plex Sans | 400 / 600 | Session titles, summaries, buttons, navigation | Preserve natural case and wrapping |
+| Display | League Gothic | 400 | `AI CLUB`, `26–27`, month headings, track headings, session titles | Headlines only; never body copy |
+| Reading | IBM Plex Sans | 400 / 600 | Summaries, buttons, navigation | Preserve natural case and wrapping |
 | Metadata | IBM Plex Mono | 400 / 500 | Date, format, status, count, eyebrow labels | At least 14px; no long paragraphs |
 
 Use the fallbacks in [tokens.css](tokens.css). During implementation, self-host only the required weights and validate their licenses, accented French characters, the en dash, numerals, and punctuation. A font loading failure must leave the page readable and free of overlap. Do not turn generated image lettering into a font asset.
@@ -14,11 +14,11 @@ Use the fallbacks in [tokens.css](tokens.css). During implementation, self-host 
 
 | Token / role | Mobile | Wide screen | Line height | Notes |
 | --- | --- | --- | --- | --- |
-| Hero display | 56px | up to 128px | 0.88–0.95 | Only once per page; avoid clipping ascenders/descenders |
-| Season numeral | 64px | up to 144px | 0.9 | Decorative, repeated in accessible text nearby |
+| Hero display | 96–132px | up to 232px | 0.88–0.95 | Only once per page; avoid clipping ascenders/descenders |
+| Season numeral | 72px | up to 144px | 0.9 | Decorative, repeated in accessible text nearby |
 | Month heading | 36px | up to 64px | 1.0 | Full month and year in chapter |
 | Track heading | 28px | up to 40px | 1.0 | Full written track label |
-| Session title | 20px | up to 28px | 1.15–1.25 | IBM Plex Sans semibold; long titles wrap |
+| Session title | 30px | up to 36px | 1.08 | League Gothic regular; natural case, long titles wrap |
 | Body | 16px | 16–18px | 1.5–1.6 | Summaries and explanatory text |
 | Metadata | 14px | 14–16px | 1.35–1.5 | No cramped uppercase paragraphs |
 | Button | 16px | 16px | 1.25 | IBM Plex Sans semibold, short label |

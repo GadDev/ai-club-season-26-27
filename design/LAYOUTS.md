@@ -8,7 +8,7 @@ V1 is one public page with a season overview and chronological chapters. The who
 2. Masthead with `AI CLUB`, `SFEIR LUXEMBOURG`, `SEASON 26–27`, and a short promise.
 3. “The season at a glance” index, covering October 2026 through June 2027 and all three tracks.
 4. Next confirmed event panel, or “No date confirmed yet.”
-5. Nine chronological month chapters. Each chapter contains Foundations, Engineering, and Deep Dive, including truthful empty states.
+5. Nine chronological month chapters. Each chapter contains Foundations, Engineering, and Deep Dive, including truthful empty states. Empty tracks use a compact heading, coloured top rule, and one-line message; full colour bands are reserved for populated tracks.
 6. Footer with basic club context and links that actually exist.
 
 The next-event panel is secondary to the season overview. Do not let a giant hero delay the index beyond the first meaningful scroll.
@@ -31,9 +31,9 @@ Each month chapter begins with a full month/year heading and flows into three tr
 
 ## Mobile anatomy
 
-The masthead reduces in height while retaining the text lockup. The month jump grid uses three equal columns with comfortable targets; each label remains legible in French and English. The month chapters then stack three track bands and their cards. All groups are expanded by default. The generated mobile image suggests chevrons, but a collapsed accordion is **not** the V1 rule.
+The masthead reduces in height while retaining the text lockup, compact season numerals, and a cropped paper/ink fragment. The month jump grid uses three equal columns with comfortable targets; each label remains legible in French and English. The month chapters then stack three track bands and their cards. All groups are expanded by default. The generated mobile image suggests chevrons, but a collapsed accordion is **not** the V1 rule.
 
-Keep actions beneath readable summaries instead of floating them over imagery. A decorative texture strip can appear at the top of a section, but not behind metadata. The next event fallback remains visible after the overview and before the detailed chapters.
+Keep actions beneath readable summaries instead of floating them over imagery. A decorative texture strip can appear at the top of a section, but not behind metadata. The next event fallback remains visible as a compact notice after the overview and before the detailed chapters. Reserve the larger event panel for a confirmed booking.
 
 ## Data-driven edge cases
 
@@ -47,3 +47,7 @@ Keep actions beneath readable summaries instead of floating them over imagery. A
 ## Visual references
 
 [Desktop](references/season-desktop.webp) and [mobile](references/season-mobile.webp) convey proportions; their event names and counts are fabricated examples. The [UI sheet](references/signal-index-ui-sheet.webp) is a visual specimen and [moodboard](references/signal-index-moodboard.webp) defines character. None is a source of event data or exact CSS measurements.
+
+## Hero texture
+
+The implementation uses `src/assets/hero-print.svg`: scalable torn-paper shapes, sparse ink strokes, and seeded grain. It is decorative, has no pointer events, and carries no programme information. Keep it around the season mark and away from the reading area. Use no animation or full-page texture.
