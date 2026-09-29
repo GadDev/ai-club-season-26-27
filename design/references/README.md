@@ -2,6 +2,8 @@
 
 These images are **visual references**, generated on 29 September 2026 for AI Club / SFEIR Luxembourg. They are not screenshots of an implemented application. Session names, months, counts, statuses, presenter names, links, and media are illustrative placeholders; the real season comes from validated content files. V1 publishes programme and session details without presenter identity.
 
+The [generation prompts](PROMPTS.md) document the moodboard and final UI sheet. Both were created with the built-in imagegen tool, using the selected page concepts as style references.
+
 | Reference | Phase | What to evaluate |
 | --- | --- | --- |
 | [Moodboard](signal-index-moodboard.webp) | Direction | Typography, paper/ink contrast, print texture and color rhythm |
