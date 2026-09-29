@@ -1,127 +1,105 @@
-# Design system — Season Index
+# Design system — The Signal Index
 
-**Status:** V1 design specification, 29 September 2026. [Art direction](ART_DIRECTION.md) explains the exploration and selection. [design/tokens.css](design/tokens.css) is the code-ready token source. The UI has not been implemented.
+**Status:** selected V1 direction, 29 September 2026. [Art direction](ART_DIRECTION.md) describes the choice; [design/tokens.css](design/tokens.css) contains the initial design tokens. [Reference images](design/references/README.md) show layouts, not actual programme content.
 
-## Principles
+## Design principles
 
-1. **A year first.** The whole October–June programme must be discoverable before the first card is opened.
-2. **Three visible lanes.** Foundations, Engineering, and Deep Dive remain recognizable throughout the page without suggesting a required progression.
-3. **Editorial hierarchy over decoration.** Typography and spacing carry the story; lines and colour help navigation.
-4. **Truthful status.** A target month, confirmed date, completed session, and cancellation must look and read differently.
-5. **Accessible at every density.** The design must survive empty cells, four sessions in one track, narrow screens, keyboard use, and long titles.
+1. **Season first.** The whole October 2026–June 2027 programme is visible before an individual session is opened.
+2. **Three parallel tracks.** Foundations, Engineering, and Deep Dive remain clearly labelled throughout the page. Their colours do not imply a required progression.
+3. **Bold shell, calm content.** Oversized display type and cut-paper accents create identity; session information uses quiet, readable surfaces.
+4. **Honest certainty.** Proposal month, confirmed date, completed session, and cancellation each use explicit words.
+5. **Mobile is composed separately.** The desktop 9 × 3 index becomes a month jump grid on a phone. Track sections stack below it.
+6. **Phases stay distinct.** Voting and replays appear only when the underlying capability exists.
 
-## Colour
+## Identity and palette
 
-These are AI Club design tokens, not claimed SFEIR brand colours. The palette is light-only for V1; an inverted theme needs a separately tested palette.
+AI CLUB is the primary display name. SFEIR LUXEMBOURG is a smaller text endorsement. The mockups do not include an official SFEIR logo; final logo use needs an approved asset.
 
-| Role | Token | Value | Use |
+| Role | Token | Hex | Allowed use |
 | --- | --- | --- | --- |
-| Canvas | `--color-canvas` | `#F6F4EE` | Page background |
-| Paper | `--color-paper` | `#FFFFFC` | Cards and raised content |
-| Ink | `--color-ink` | `#18252D` | Headings and primary text |
-| Muted ink | `--color-muted` | `#4D5A63` | Secondary text |
-| Rule | `--color-rule` | `#B8C3C7` | Decorative section separators only |
-| Control border | `--color-control-border` | `#728087` | Inputs and essential boundaries |
-| Foundations | `--color-foundations` | `#215F58` | Track label and small rule |
-| Engineering | `--color-engineering` | `#244C7B` | Track label, links |
-| Deep Dive | `--color-deep-dive` | `#653C73` | Track label and small rule |
-| Signal / focus | `--color-signal` | `#A6462E` | Next-event accent, focus outline |
+| Navy ink | --color-ink | #14212E | Headings, text, dark panels |
+| Warm paper | --color-paper | #F7F2E7 | Page and card background |
+| White | --color-white | #FFFFFF | Text on navy or cobalt |
+| Cobalt | --color-cobalt | #2348D8 | Engineering band, links, primary focus |
+| Vermilion | --color-vermilion | #F45135 | Deep Dive band, large accents |
+| Citron | --color-citron | #E7EF65 | Foundations band, small signal accents |
+| Muted text | --color-muted | #56616B | Secondary copy on paper |
+| Control edge | --color-control-border | #78838A | Boundaries that users must perceive |
+| Decorative rule | --color-rule | #C7C9C4 | Nonessential separators only |
 
-Contrast checks on the specified backgrounds: ink on canvas **14.23:1**, muted ink on canvas **6.45:1**, the three track colours on paper **7.37:1 / 8.75:1 / 8.57:1**, signal on paper **5.93:1**, and control border on paper **4.07:1**. These computed pairs clear the usual 4.5:1 text and 3:1 non-text thresholds; actual rendered components still need visual and automated checks. The pale rule has only **1.80:1** on paper and must never be the sole boundary of a control or the only status cue. See [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/quickref/).
+**Text pairings:** navy on paper (14.62:1), white on navy (16.32:1), white on cobalt (7.02:1), navy on citron (13.16:1), navy on vermilion (4.72:1), and muted text on paper (5.67:1). Vermilion on paper is only 3.10:1: use it for large display type or decoration, never small text. White on vermilion is 3.46:1: use navy text there. Essential control borders on paper have at least 3:1 contrast; decorative rules do not convey state. Check rendered colour pairs against [WCAG 2.2 guidance](https://www.w3.org/WAI/WCAG22/quickref/).
 
-Track colour is always paired with the written track name. A link has an underline in running text. Status uses text and border treatment, never hue alone.
+Track colours are paired with the names FOUNDATIONS, ENGINEERING, and DEEP DIVE. A status is never conveyed by colour or texture alone.
 
-## Typography
+## Type
 
-| Role | Family | Scale | Notes |
-| --- | --- | --- | --- |
-| Season display | Newsreader, Georgia fallback | `clamp(2.75rem, 5vw, 4.75rem)` | Limited to the masthead |
-| Month / section heading | Newsreader, Georgia fallback | `clamp(1.75rem, 3vw, 2.75rem)` | Clear chapter rhythm |
-| Body and cards | IBM Plex Sans, system-ui fallback | `1rem` body, `1.25rem` card title | Body line-height 1.5–1.6 |
-| Metadata | IBM Plex Mono, ui-monospace fallback | `0.875rem` | Dates, track numbers, format labels; avoid long prose |
-
-Use the fonts as a proposal for visual identity. When implemented, self-host only the necessary WOFF2 weights and keep system fallbacks. Newsreader and IBM Plex are available under open font licences from their creators ([Newsreader](https://github.com/productiontype/Newsreader), [IBM Plex](https://github.com/IBM/plex)).
-
-Use sentence case for session titles and summaries. Uppercase may mark short metadata labels, with modest letter spacing; never set full descriptions in all caps. Let titles wrap, including in French. Aim for about `70ch` in long text blocks.
-
-## Grid and spacing
-
-- Content width: up to `80rem`, centered.
-- Page gutters: `1rem` on small screens, `1.5rem` on medium, `3rem` on wide screens.
-- Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64, 96 px, used through the `--space-*` tokens.
-- Cards: paper background, 1 px essential border where clickable, 4 px radius, no default shadow. Hover may shift the border/underline, without changing layout.
-- Alignment: dates and metadata align to a consistent left edge; summaries use a comfortable reading measure. Avoid equal-height cards that create large blank areas.
-
-### Responsive composition
-
-| Width | Season index | Month chapter |
+| Role | Proposed family | Use |
 | --- | --- | --- |
-| Wide, at least 80rem | Nine month columns with three track rows; cells show count/presence | Three track columns with readable cards |
-| Medium, 48–79.99rem | Three blocks of three months | Three columns if space permits; otherwise stacked |
-| Small, below 48rem | Compact month jump grid; no page-level horizontal scroll | Month heading followed by the three tracks in order |
+| Display | League Gothic, then a condensed sans fallback | AI CLUB, season numerals, month headings, large calls to action |
+| Reading | IBM Plex Sans, then system-ui | Summaries, controls, explanations |
+| Metadata | IBM Plex Mono, then ui-monospace | Dates, formats, status labels, track counts |
 
-The index is a table of contents, not the sole source of information. If implemented as a visual matrix, use semantic row/column headers or an equivalent labelled structure. A mobile alternative must avoid duplicate announcements to assistive technology. All month anchors and cards work with keyboard and browser history.
+Self-host only required font weights when the UI is built; keep fallbacks. [League Gothic](https://www.theleagueofmoveabletype.com/league-gothic) and [IBM Plex](https://github.com/IBM/plex/) are open-source fonts.
 
-## Components
+- Hero: clamp(3.5rem, 8vw, 8rem), line height close to 0.9, used once.
+- Month heading: clamp(2.25rem, 5vw, 4rem).
+- Session title: clamp(1.25rem, 2vw, 1.75rem), with natural wrapping.
+- Body: 1rem / 1.5–1.6 line height.
+- Metadata: at least 0.875rem; no paragraphs in all caps or mono.
 
-### 1. Masthead
+Avoid text embedded in imagery. French-length titles must wrap without being clipped.
 
-Small `AI CLUB / SFEIR LUXEMBOURG` line, large `Season 2026–2027` title, and a plain statement of purpose. Keep the SFEIR mark subordinate to the programme title and use an approved official asset. No rotating slogan or full-screen hero art.
+## Structure and spacing
 
-### 2. Season index
+Use a maximum content width of 80rem. Gutters: 1rem on mobile, 1.5rem on tablet, 3rem on wide screens. Use the 4/8/12/16/24/32/48/64/96 px spacing scale. Card surfaces are flat paper with a visible border; strong shadows are unnecessary. A diagonal cut or arrow can punctuate a section, never obscure a label.
 
-Shows October–June and the three named tracks. A cell may show a count and a link to that month's track. Example accessible name: **“March 2027, Engineering, four sessions.”** Zero is shown as an honest empty state. Do not draw a line between cells that implies a prerequisite or a planned event.
+### V1 desktop season page
 
-### 3. Next confirmed event
+1. Compact navigation: SEASON and ABOUT only if About exists.
+2. Bold masthead: AI CLUB, SFEIR LUXEMBOURG, SEASON 26–27, one-line promise.
+3. Whole-season index: nine months as columns, three tracks as rows. Cells contain a count or presence mark and link to a month/track section. Empty cells remain empty.
+4. Next confirmed event: a smaller strip derived from verified dates, with a clear fallback when none exists.
+5. Month chapters: full session titles, short summaries, format, track, explicit status, confirmed date/presenter where available.
 
-A narrow callout with date, time in `Europe/Luxembourg`, title, track, and a month anchor. If no confirmed future date exists, show **“No date confirmed yet”** with a link to the proposed programme. It is recalculated from the current time when the static page loads; the fallback must remain understandable without JavaScript.
+The [desktop reference](design/references/season-desktop.webp) demonstrates hierarchy. Its counts and titles are illustrative. Do not hard-code them.
 
-### 4. Month chapter
+### V1 mobile season page
 
-Month name and year, optional one-sentence editorial theme only if curated, then the three track areas. A track can have multiple cards. If empty, show **“No session planned in this track”** in muted text without a fake card.
+At widths below 48rem, use a three-column month jump grid (October through June) followed by month chapters. Within a chapter, Foundations, Engineering, and Deep Dive stack vertically. The [mobile reference](design/references/season-mobile.webp) demonstrates the composition. All content remains available without horizontal page scrolling; avoid automatic collapsed sections that hide the programme.
 
-### 5. Session card
+At 48–79.99rem, group the index into three sets of three months. At 80rem and above, show the complete nine-month matrix.
 
-Information order: status/date → track → title → summary → format → confirmed presenter, if known. A title is never truncated as the only readable label. The whole card need not be clickable in V1; link only to an actual destination. Future links to resources or voting controls can be added without changing the core content hierarchy.
+## Components and states
 
-| Status | Written label | Visual treatment |
+| Component | Required information | Treatment |
 | --- | --- | --- |
-| Proposed | “Proposed for March” | Dotted border and target month; no calendar day |
-| Scheduled | “12 March 2027 · 12:30” plus “Scheduled” | Solid border; date emphasized |
-| Completed | “Completed” plus actual date | Quieter surface; resources shown only when available |
-| Cancelled | “Cancelled” and date if known | Explicit label and optional reason; title remains legible |
+| Month cell | Month/year, session count or empty state | Compact mark plus text/accessible label; link to chapter when populated |
+| Track heading | Full track name | Citron + navy for Foundations; cobalt + white for Engineering; vermilion + navy for Deep Dive |
+| Proposed card | Title, summary, track, target month | Written “Proposed for [month]”, dotted or broken outline, no day |
+| Scheduled card | Title, summary, track, confirmed start | Written “Scheduled”, date/time in Europe/Luxembourg |
+| Completed card | Title, actual date, available resources | Written “Completed”; materials shown only when present |
+| Cancelled card | Title, status, optional reason | Written “Cancelled”; title remains legible |
+| Next event | Closest future confirmed event | Small highlight; if none, “No date confirmed yet” |
+| Empty track | None planned | Plain text, no fake disabled card |
 
-The samples specify treatment, not real AI Club events.
-
-### 6. Future ballot and resources
-
-V2 adds a single, clearly labelled choice control per eligible proposal and a selected state. It must explain the voting window and outcome rules. V3 adds labelled presentation/replay links, duration or file type, and access wording. Neither control appears as a disabled teaser in V1.
+The bold reference images sometimes imply that every cell has content. The implementation must render real data, including empty months and multiple sessions in one cell.
 
 ## Interaction and accessibility
 
-- All actionable targets aim for at least **44 × 44 CSS px** including padding.
-- Focus is always visible: a 3 px signal outline with 2 px separation. Do not remove native focus without replacement.
-- Keyboard order follows the reading order: index → next event → month chapters.
-- Use semantic headings, links, lists, and buttons. Never make a decorative dot the only interactive target.
-- Motion is limited to 120–180 ms colour/underline changes. Respect `prefers-reduced-motion` and avoid animated timeline travel. See [MDN's reduced-motion guidance](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/%40media/prefers-reduced-motion).
-- Dates include day, month, year, and timezone where time is shown. Do not encode certainty in opacity alone.
-- Test at 360 px width, 200% zoom, keyboard only, and with a screen reader before V1 publication.
+- The page uses semantic headings, list or table relationships, links, and buttons. Interactive marks get accessible names such as “November 2026, Engineering, two sessions.”
+- Keep logical keyboard order from the season index into chronological month chapters. Provide visible 3px focus outline with separation; cobalt on paper meets text contrast.
+- Aim for 44 × 44 CSS px touch targets. Links in prose are underlined.
+- Motion is limited to 120–180ms colour or underline changes, with reduced-motion preference respected. Avoid animated travel along the timeline.
+- At 200% zoom and 360px width, no essential text is cropped or hidden behind decorative shapes.
+- Do not rely on texture, opacity, icon shape, or hue alone for status. A session title must remain readable even when long.
+- The reference images are generated visual concepts. Recreate the design in HTML/CSS with real, selectable text and accessible controls.
 
-## Content and imagery rules
+## Later phases
 
-Titles should name the subject or engineering question. Summaries should say what attendees will understand or try in one or two sentences. Formats are short literal labels: Talk, Workshop, Demo, Lab, Discussion. Avoid jargon as decoration, hype words, and gamified progress language.
+**V2 ballot:** use the same session card vocabulary with one radio-style choice per eligible SFEIR account and a clear summary before submission. No popularity bars, likes, or vote totals in the attendee view. The [voting concept](design/references/voting-concept.webp) is a future layout, not an implemented flow. Actual identity, rules, and backend enforcement are defined in the product and technical documents.
 
-The timeline does not require illustrations. Later session imagery should express a concrete concept and remain optional to comprehension. Do not embed text or status in images.
+**V3 materials:** use a completed-session page with a clear replay area, transcript access, and labelled presentation/repository links. No autoplay, fake player, or public thumbnail that reveals restricted content. The [materials concept](design/references/session-replay-concept.webp) is a future layout; publication and access policies must be settled first.
 
-## Design acceptance test
+## Visual acceptance
 
-Before implementation is accepted, populate the layout with the real season inventory and inspect:
-
-- nine months in one index;
-- three tracks visible in every month;
-- a long title, a missing presenter, a target month without a date, and a cancellation;
-- several sessions in one track and an empty neighboring track;
-- the next-event change when an event time passes;
-- no fake vote or replay affordance in V1.
-
-The visual system succeeds when a visitor can scan the whole season and still read individual sessions without deciphering a chart.
+Test the layout with the real programme before implementation is accepted: nine months, three tracks, a long title, an unconfirmed proposal, a cancellation, multiple sessions in one track, an empty neighbour, and a next-event transition after its start time. The visual system succeeds when the season is both exciting at first glance and easy to read in detail.

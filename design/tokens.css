@@ -1,32 +1,38 @@
 /*
- * AI Club Season Index — exploratory V1 tokens.
- * The palette is for AI Club; it is not an assertion of SFEIR corporate colours.
- * Self-host the font files when implementing the UI. System fallbacks work now.
+ * AI Club / SFEIR Luxembourg — Signal Index V1 exploratory tokens.
+ * These are AI Club colours, not a claim about SFEIR corporate branding.
+ * Reference images are design concepts; accessible HTML/CSS uses these tokens.
  */
 :root {
   color-scheme: light;
 
-  --color-canvas: #F6F4EE;
-  --color-paper: #FFFFFC;
-  --color-ink: #18252D;
-  --color-muted: #4D5A63;
-  --color-rule: #B8C3C7; /* decorative only */
-  --color-control-border: #728087;
-  --color-foundations: #215F58;
-  --color-engineering: #244C7B;
-  --color-deep-dive: #653C73;
-  --color-signal: #A6462E;
-  --color-focus: #A6462E;
+  --color-ink: #14212E;
+  --color-paper: #F7F2E7;
+  --color-white: #FFFFFF;
+  --color-cobalt: #2348D8;
+  --color-vermilion: #F45135;
+  --color-citron: #E7EF65;
+  --color-muted: #56616B;
+  --color-control-border: #78838A;
+  --color-rule: #C7C9C4; /* decorative only */
 
-  --font-display: "Newsreader", Georgia, serif;
+  --color-foundations-bg: var(--color-citron);
+  --color-foundations-text: var(--color-ink);
+  --color-engineering-bg: var(--color-cobalt);
+  --color-engineering-text: var(--color-white);
+  --color-deep-dive-bg: var(--color-vermilion);
+  --color-deep-dive-text: var(--color-ink);
+  --color-focus: var(--color-cobalt);
+
+  --font-display: "League Gothic", "Barlow Condensed", Impact, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
   --font-meta: "IBM Plex Mono", ui-monospace, monospace;
 
   --text-meta: 0.875rem;
   --text-body: 1rem;
-  --text-card-title: 1.25rem;
-  --text-section: clamp(1.75rem, 3vw, 2.75rem);
-  --text-hero: clamp(2.75rem, 5vw, 4.75rem);
+  --text-card-title: clamp(1.25rem, 2vw, 1.75rem);
+  --text-month: clamp(2.25rem, 5vw, 4rem);
+  --text-hero: clamp(3.5rem, 8vw, 8rem);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -40,7 +46,6 @@
 
   --content-width: 80rem;
   --reading-width: 70ch;
-  --card-radius: 0.25rem;
   --focus-width: 0.1875rem;
 }
 

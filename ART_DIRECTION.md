@@ -1,83 +1,45 @@
-# Artistic direction — AI Club Season Index
+# Artistic direction — The Signal Index
 
-**Status:** selected direction for design exploration, 29 September 2026. This document sets the visual approach before any UI code or session schedule exists.
+**Selected direction:** AI Club / SFEIR Luxembourg, Season 2026–2027. This is a design direction for the timeline-first product; the reference images use illustrative content, not a confirmed programme.
 
-## The design question
+## Decision
 
-How can a visitor understand nine months of events across three parallel tracks in under a minute, then read one month's sessions comfortably? The interface must convey a serious engineering programme without feeling like an admin dashboard or a formal course platform.
+The application should feel like a bold editorial signal for an engineering community: oversized compressed type, a precise season grid, strong colour-coded track bands, and a few sharp cut-paper gestures. The season remains the main event.
 
-## Tree of thoughts
+The earlier [Season Index exploration](https://github.com/GadDev/ai-club-season-26-27/commits/main/ART_DIRECTION.md) tested conference programme, research index, transit map, and mission control. Additional visual explorations tested Swiss grid, dark observatory, library catalogue, and open workshop. The chosen Signal Index keeps the editorial discipline of the Season Index and adds a more distinctive public identity.
 
-```mermaid
-flowchart TD
-  A["A year-long AI Club programme"] --> B["Conference programme"]
-  A --> C["Research index"]
-  A --> D["Transit map"]
-  A --> E["Mission control"]
-  B --> F["Season Index"]
-  C --> F
-```
+## Visual character
 
-Each branch was tested against the same constraints: whole-season comprehension, three parallel tracks, mobile and keyboard use, growth to voting/materials, and maintenance by a small team.
+- **Name:** The Signal Index.
+- **Brand line:** AI CLUB / SFEIR LUXEMBOURG. Use text until an official logo asset and its usage are approved.
+- **Voice:** curious, direct, practical; energetic without hype.
+- **Typography:** towering condensed display type for the season and month headings; calm sans-serif reading text; monospaced metadata.
+- **Palette:** deep navy, warm cream, electric cobalt, vermilion, and acid citron. Track colour is always paired with a written label.
+- **Shape:** strict rectangular grid, occasional diagonal paper cut and directional arrow. These are accent marks, never the only navigation cue.
+- **Texture:** sparse print-like irregularity in nonessential surfaces. Text and controls sit on clean flat colour.
 
-| Branch | What it gives us | Where it breaks | Decision |
-| --- | --- | --- | --- |
-| **Conference programme** | Clear dates, formats, presenters, and editorial rhythm | Can become a generic event-card catalogue | Keep its navigational clarity |
-| **Research index / field guide** | Distinctive typography, taxonomy, precise metadata, durable archive | Can feel too academic or require excessive annotation | Keep its visual language, edit it down |
-| **Transit map** | An immediate visual metaphor for parallel tracks | Twenty-seven possible cells become tiny; lines imply a required route; mobile labels are difficult | Reject as primary UI; use only subtle lane rules |
-| **Mission control** | Strong technical identity and useful status signals | Dense instrumentation would bury sessions under indicators | Reject for attendee V1; perhaps use restraint in future organizer tools |
+## Layout family
 
-**Chosen synthesis: Season Index.** Conference programme for navigation, research index for hierarchy and material quality. The result should feel like a carefully edited annual programme that engineers want to keep open.
+| Phase | Reference | Purpose |
+| --- | --- | --- |
+| V1 | [Desktop season](design/references/season-desktop.webp) | Nine-month index, three tracks, next confirmed event, readable session cards |
+| V1 | [Mobile season](design/references/season-mobile.webp) | Three-by-three month jump grid and stacked track sections |
+| V2 concept | [SFEIR voting](design/references/voting-concept.webp) | One choice per eligible account, clear selection and submission |
+| V3 concept | [Session materials](design/references/session-replay-concept.webp) | Replay and approved presentation links after a completed session |
 
-This is a design hypothesis. Test it with real session titles, including long titles, multiple sessions in one cell, empty months, and French-length labels before calling the direction settled.
+The [original Signal Index concept](design/references/signal-index-concept.webp) is kept as a mood reference. It overfills the 9 × 3 grid with topic labels. The implemented V1 index should use compact counts or presence marks; full titles belong in the readable month sections.
 
-## Visual thesis
+## Rules that protect usability
 
-- **Mood:** considered, curious, technical, welcoming.
-- **Metaphor:** an annual index with month chapters and three consistent lanes.
-- **Texture:** paper-like canvas, strong typography, precise rules, generous space. No simulated notebook stains or faux lab stamps.
-- **Identity:** AI Club has its own visual language. Use an official SFEIR logo asset if approved, as an endorsement in the header or footer; do not redraw it or assume this palette is SFEIR's corporate palette. SFEIR provides official logo variants through its [press resources](https://www.sfeir.com/sfeir/presse/).
+1. The desktop season index may span nine months, but each cell holds a count or compact marker, not a paragraph. A blank cell is an honest gap.
+2. On mobile, the index becomes a month jump grid and the three tracks stack inside each month. Never shrink a desktop matrix to phone width.
+3. The bold masthead must yield quickly to the season. Limit heavy texture to the masthead or card corner, with no texture behind small text.
+4. Proposed, scheduled, completed, and cancelled are written states. A proposed month does not pretend to be a confirmed date.
+5. Do not put voting or replay controls on the V1 timeline before those capabilities exist.
+6. Keep sample titles and counts in these images clearly separate from the real programme data.
 
-## Information choreography
+## Brand and production note
 
-The homepage should reveal the entire season immediately:
+The design is for AI Club at SFEIR Luxembourg. It does not claim that these colours or typefaces are SFEIR corporate brand standards. Use an official SFEIR logo only from an approved asset and have the final public use reviewed by the relevant team. SFEIR offers logo variants in its [press resources](https://www.sfeir.com/sfeir/presse/).
 
-1. **Masthead:** AI Club / SFEIR Luxembourg; Season 2026–2027; one-sentence editorial promise.
-2. **Season index:** October through June across time, with Foundations, Engineering, and Deep Dive as rows. Cells show presence or count and link to that month. This is an overview, not a grid of miniature full cards.
-3. **Next confirmed event:** a modest strip with verified date and title. If none is confirmed, say so.
-4. **Month chapters:** nine readable sections in chronological order. Within each, the three tracks stay in a consistent order. Session cards carry actual titles, summaries, dates when confirmed, format, and explicit status.
-5. **Footer:** source and club context, with only approved links.
-
-At desktop widths, the index fits nine compact month columns because cells contain counts or marks, not titles. Month chapters can use three track columns. At medium widths, split the index into three three-month blocks. On mobile, use month anchors in a compact grid and stack the three tracks under each month; all content remains readable without horizontal page scrolling.
-
-Do not automatically collapse months. A visitor should be able to scroll the whole programme, and direct month links should work without client state.
-
-## The visual grammar
-
-- The season title is expressive; session content is matter-of-fact.
-- Large month numerals and quiet metadata provide rhythm. Dates are information, not decoration.
-- Track names are always written out. Colour reinforces them but never replaces the label.
-- Proposed sessions look provisional through a dotted rule and the word **Proposed**. Scheduled sessions show a confirmed date. Completed and cancelled sessions retain legible titles with explicit labels.
-- A blank month/track cell means there is no entry in the current plan. It is not a disabled button or a cancelled talk.
-- Use fine architectural rules, never lines that suggest prerequisites or a required learning route.
-- The primary action in V1 is to navigate the programme. No inactive voting controls or “coming soon” replay buttons.
-
-## Three quick stress tests
-
-| Scenario | What the design must do |
-| --- | --- |
-| Four Engineering talks in March, none in Deep Dive | Show a count of four in the index and four readable cards in March; let the empty Deep Dive lane remain visible without a fake placeholder event. |
-| A proposal has a target month but no day or presenter | Show “Proposed for March” and no invented calendar date or profile link. |
-| A title is long or the interface later uses French | Wrap naturally; never truncate the only readable title or bake words into an illustration. |
-
-## Imagery and illustration
-
-The V1 timeline needs no hero artwork. If imagery is introduced for individual sessions later, it should clarify a concept through an original diagram, object, or editorial metaphor. Avoid glowing brains, robot mascots, stock office scenes, neon circuitry, and illustrations that contain essential text. Portraits and replay thumbnails belong to the later materials phase, subject to permission.
-
-## How the direction extends
-
-- **Voting:** a future ballot uses the same session card, then adds one clear selection control and a transparent selected state. Voting is never represented by applause, popularity fireworks, or a leaderboard.
-- **Presentations and replays:** resources appear as a small, labelled list attached to the session. A recording thumbnail is supplementary; the title, duration, and access rules remain text.
-- **SFEIR Institute:** future contextual learning links use a separate, clearly identified block, not an advertisement inserted among club sessions.
-
-See [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) for exact tokens and component behavior.
+See [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) for tokens, components, and responsive rules. The images are visual references rather than pixel-perfect specifications.
