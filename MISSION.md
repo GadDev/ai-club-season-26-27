@@ -1,8 +1,8 @@
 # Mission
 
-Make the October 2026–June 2027 AI Club programme understandable at a glance. Engineers can see the whole season early, choose sessions suited to their knowledge of each subject, and revisit useful material afterward. Organizers can spot gaps, repetition, and format imbalance before the programme becomes disconnected invitations.
+Make the **October 2026–June 2027 AI Club season** visible as one coherent programme. Engineers should be able to scan the entire timeline, see what is planned or confirmed, and find a session suited to their knowledge of its subject.
 
-Three tracks run **in parallel** across the season:
+Three audience tracks run **in parallel** across the season:
 
 | Track | Audience promise |
 | --- | --- |
@@ -10,18 +10,30 @@ Three tracks run **in parallel** across the season:
 | Engineering · Practitioner | Build and assess systems with real constraints. |
 | Deep Dive · Advanced | Examine difficult engineering and research questions. |
 
-The labels describe familiarity with a subject, not seniority. A month can have any number of sessions in each track. Related sessions may echo a theme across tracks, without creating a mandatory curriculum.
+The labels describe familiarity with a subject, not seniority. A month may have any number of sessions in each track. Themes can connect talks across tracks without imposing a mandatory curriculum.
 
-V1 should answer: What is planned across the entire season? What is the next confirmed event? Which session fits my background? Is it proposed or scheduled? Who presents, and where are the materials afterward? The primary view is a mobile-friendly month × track board with linkable session details.
+## Release sequence
 
-| Stage | Outcome |
-| --- | --- |
-| V0 · Map | Inventory delivered, planned, and brainstormed sessions; remove duplicates and verify facts. |
-| V1 · See | Whole-season board, next event, session details, status, accessible mobile view. |
-| V1.5 · Understand | Organizer coverage by track, domain, and format. |
-| V2 · Explore | Search, topic browsing, related sessions, past resources. |
-| V3 · Learn | Preparation and optional trails grounded in actual sessions. |
-| V4 · Contribute | Presenter profiles and proposals. |
-| V5 · Connect | Contextual links to SFEIR Institute and deeper training. |
+### V0 — Map the programme
 
-The later stages are directions, not commitments.
+Inventory sessions already delivered, planned, and brainstormed. Remove duplicates, verify dates and presenters, and distinguish a proposed month from a confirmed event. The content is useful to the organizers before a UI exists.
+
+### V1 — Display the season timeline
+
+One read-only, accessible, mobile-friendly timeline from October 2026 to June 2027. It shows the month, track, title, short summary, format, and status for each session. Show a confirmed date and presenter only when verified. Highlight the next confirmed event using the current time.
+
+V1 succeeds when a visitor can answer: What is planned for the whole season? Which sessions fit my subject background? What is confirmed, and what is still proposed? No account is needed to browse the timeline.
+
+### V2 — Let eligible SFEIR members vote
+
+SFEIR account holders can choose among eligible proposed topics and help decide the programme. This phase requires verified identity, eligibility rules, a durable vote record, and a clear decision process. The exact voting window, one-choice rule, tie handling, and relationship between votes and the final programme must be agreed before implementation. A vote should never silently turn a proposal into a confirmed event.
+
+### V3 — Make sessions available afterward
+
+Add presentations and replay access where publication rights and audience permissions allow it. Start with links to approved material; introduce managed file or video hosting only when there is a real collection and an agreed access policy.
+
+Presenter profiles, richer discovery, learning trails, and SFEIR Institute connections remain possible later directions. They are not prerequisites for the timeline.
+
+## Success
+
+The first measure is whether the season is easy to understand and keep accurate. Later, voting should give eligible members a fair, understandable way to influence the programme. Replay and presentation access should make completed sessions useful without turning the club into a learning-management system.
