@@ -14,8 +14,8 @@ The repository is at **V0: map the programme**. It contains product documents an
 - [Constitution](CONSTITUTION.md): product and editorial principles.
 - [Technical stack](TECH_STACK.md): V1 architecture and later system boundaries.
 - [Art direction](ART_DIRECTION.md): explored visual branches and the selected Signal Index direction.
-- [Design system](DESIGN_SYSTEM.md): the selected Signal Index colours, typography, layouts, and accessibility rules; [CSS tokens](design/tokens.css).
-- [Layout references](design/references/README.md): desktop, mobile, future voting and replay concepts.
+- [Design system](DESIGN_SYSTEM.md): the selected Signal Index direction; [implementation guide](design/README.md) for foundations, typography, components, icons and layouts; [CSS tokens](design/tokens.css).
+- [Visual references](design/references/README.md): moodboard, one-sheet UI specimen, desktop and mobile pages, plus future voting and replay concepts.
 - [Season board](SEASON_BOARD.md): eight tentative month placements, 22 more candidate pairs, prior coverage, and a separate confirmed-event lane.
 
 Next: review the proposed placements with the organizers and verify any existing event records. Convert approved public entries to validated session files, then build the V1 timeline against real content.

@@ -1,6 +1,6 @@
 # Design system — The Signal Index
 
-**Status:** selected V1 direction, 29 September 2026. [Art direction](ART_DIRECTION.md) describes the choice; [design/tokens.css](design/tokens.css) contains the initial design tokens. [Reference images](design/references/README.md) show layouts, not actual programme content.
+**Status:** selected V1 direction, 29 September 2026. [Art direction](ART_DIRECTION.md) describes the choice; [design/tokens.css](design/tokens.css) contains the initial design tokens. The [implementation guide](design/README.md) specifies foundations, typography, components, icons, and responsive layouts. [Reference images](design/references/README.md) show visual hierarchy, not actual programme content.
 
 ## Design principles
 
@@ -33,13 +33,15 @@ Track colours are paired with the names FOUNDATIONS, ENGINEERING, and DEEP DIVE.
 
 ## Type
 
-| Role | Proposed family | Use |
+| Role | Chosen family | Use |
 | --- | --- | --- |
 | Display | League Gothic, then a condensed sans fallback | AI CLUB, season numerals, month headings, large calls to action |
 | Reading | IBM Plex Sans, then system-ui | Summaries, controls, explanations |
 | Metadata | IBM Plex Mono, then ui-monospace | Dates, formats, status labels, track counts |
 
 Self-host only required font weights when the UI is built; keep fallbacks. [League Gothic](https://www.theleagueofmoveabletype.com/league-gothic) and [IBM Plex](https://github.com/IBM/plex/) are open-source fonts.
+
+[Typography specifications](design/TYPOGRAPHY.md) define scale, casing, wrapping, and font-loading checks. The generated visual sheet is a specimen, not a font file.
 
 - Hero: clamp(3.5rem, 8vw, 8rem), line height close to 0.9, used once.
 - Month heading: clamp(2.25rem, 5vw, 4rem).
@@ -70,6 +72,8 @@ At widths below 48rem, use a three-column month jump grid (October through June)
 At 48–79.99rem, group the index into three sets of three months. At 80rem and above, show the complete nine-month matrix.
 
 ## Components and states
+
+The [component specification](design/COMPONENTS.md) defines anatomy, variants, semantic elements, buttons, status treatment, and edge cases. The [icon catalog](design/ICONOGRAPHY.md) includes SVG sources. The [layout specification](design/LAYOUTS.md) defines each breakpoint. The table below is a compact summary.
 
 | Component | Required information | Treatment |
 | --- | --- | --- |

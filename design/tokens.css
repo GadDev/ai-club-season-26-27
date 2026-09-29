@@ -23,6 +23,13 @@
   --color-deep-dive-bg: var(--color-vermilion);
   --color-deep-dive-text: var(--color-ink);
   --color-focus: var(--color-cobalt);
+  --color-focus-on-dark: var(--color-citron);
+  --color-button-primary-bg: var(--color-ink);
+  --color-button-primary-text: var(--color-paper);
+  --color-button-secondary-bg: var(--color-paper);
+  --color-button-secondary-text: var(--color-ink);
+  --color-status-bg: var(--color-paper);
+  --color-status-text: var(--color-ink);
 
   --font-display: "League Gothic", "Barlow Condensed", Impact, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
@@ -33,6 +40,8 @@
   --text-card-title: clamp(1.25rem, 2vw, 1.75rem);
   --text-month: clamp(2.25rem, 5vw, 4rem);
   --text-hero: clamp(3.5rem, 8vw, 8rem);
+  --text-season-numeral: clamp(4rem, 9vw, 9rem);
+  --text-track: clamp(1.75rem, 3vw, 2.5rem);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -47,6 +56,13 @@
   --content-width: 80rem;
   --reading-width: 70ch;
   --focus-width: 0.1875rem;
+  --focus-offset: 0.125rem;
+  --border-card: 0.0625rem;
+  --border-control: 0.125rem;
+  --radius: 0;
+  --touch-target: 2.75rem;
+  --button-height: 3rem;
+  --motion-quick: 150ms;
 }
 
 @media (prefers-reduced-motion: reduce) {

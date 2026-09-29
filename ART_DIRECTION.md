@@ -43,3 +43,5 @@ The [original Signal Index concept](design/references/signal-index-concept.webp)
 The design is for AI Club at SFEIR Luxembourg. It does not claim that these colours or typefaces are SFEIR corporate brand standards. Use an official SFEIR logo only from an approved asset and have the final public use reviewed by the relevant team. SFEIR offers logo variants in its [press resources](https://www.sfeir.com/sfeir/presse/).
 
 See [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) for tokens, components, and responsive rules. The images are visual references rather than pixel-perfect specifications.
+
+The [moodboard](design/references/signal-index-moodboard.webp) captures the material and typography, while the [UI specimen](design/references/signal-index-ui-sheet.webp) collects components on one sheet. Their exact implementation rules live in the [design guide](design/README.md).
