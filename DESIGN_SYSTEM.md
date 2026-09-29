@@ -8,7 +8,7 @@
 2. **Three parallel tracks.** Foundations, Engineering, and Deep Dive remain clearly labelled throughout the page. Their colours do not imply a required progression.
 3. **Bold shell, calm content.** Oversized display type and cut-paper accents create identity; session information uses quiet, readable surfaces.
 4. **Honest certainty.** Proposal month, confirmed date, completed session, and cancellation each use explicit words.
-5. **Mobile is composed separately.** The desktop 9 × 3 index becomes a month jump grid on a phone. Track sections stack below it.
+5. **Mobile is composed separately.** The desktop 9 × 3 index becomes a labelled month selector and three topic previews on a phone. All chronological chapters remain below it.
 6. **Phases stay distinct.** Voting and replays appear only when the underlying capability exists.
 
 ## Identity and palette
@@ -59,7 +59,7 @@ Use a maximum content width of 80rem. Gutters: 1rem on mobile, 1.5rem on tablet,
 
 1. Compact navigation: SEASON and ABOUT only if About exists.
 2. Bold masthead: AI CLUB, SFEIR LUXEMBOURG, SEASON 26–27, one-line promise.
-3. Whole-season index: nine months as columns, three tracks as rows. Cells contain a count or presence mark and link to a month/track section. Empty cells remain empty.
+3. Whole-season index: nine months as columns, three tracks as rows. Cells contain reference-style SVG symbols and short topic labels, linked to the month/track section. Talk/workshop pairs share one label; multiple topics remain visible. Empty cells say no session is planned.
 4. Next confirmed event: a smaller strip derived from verified dates, with a clear fallback when none exists.
 5. Month chapters: full session titles, short summaries, format, track, explicit status, and confirmed date where available. No presenter identity in V1.
 
@@ -67,7 +67,7 @@ The [desktop reference](design/references/season-desktop.webp) demonstrates hier
 
 ### V1 mobile season page
 
-At widths below 48rem, use a three-column month jump grid (October through June) followed by month chapters. Within a chapter, Foundations, Engineering, and Deep Dive stack vertically. The [mobile reference](design/references/season-mobile.webp) demonstrates the composition. All content remains available without horizontal page scrolling; avoid automatic collapsed sections that hide the programme.
+At widths below 48rem, use a native month selector (October through June), three labelled track/topic previews, and a link to the selected month, followed by every month chapter. Within a chapter, Foundations, Engineering, and Deep Dive stack vertically. The [mobile reference](design/references/season-mobile.webp) demonstrates the composition. All content remains available without horizontal page scrolling; avoid automatic collapsed sections that hide the programme.
 
 At 48–79.99rem, group the index into three sets of three months. At 80rem and above, show the complete nine-month matrix.
 
@@ -77,7 +77,7 @@ The [component specification](design/COMPONENTS.md) defines anatomy, variants, s
 
 | Component | Required information | Treatment |
 | --- | --- | --- |
-| Month cell | Month/year, session count or empty state | Compact mark plus text/accessible label; link to chapter when populated |
+| Month cell | Month/year, short topic labels or empty state | Decorative SVGs plus visible topic text; session count in accessible link name |
 | Track heading | Full track name | Citron + navy for Foundations; cobalt + white for Engineering; vermilion + navy for Deep Dive |
 | Proposed card | Title, summary, track, target month | Written “Proposed for [month]”, dotted or broken outline, no day |
 | Scheduled card | Title, summary, track, confirmed start | Written “Scheduled”, date/time in Europe/Luxembourg |

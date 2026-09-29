@@ -5,7 +5,7 @@ The icons are **navigation aids**, not a competing illustration language. Use si
 ## Construction
 
 - Source assets live in [`icons/`](icons/). They are monochrome SVGs using `currentColor` on a 24×24 viewBox.
-- Default stroke width: 2px; square line caps and miter joins. No fill except a deliberate solid mark in a future, separately reviewed component.
+- Default stroke width: 2px; square line caps and miter joins. Navigation icons are outlined; the season topic glyphs below deliberately use solid silhouettes.
 - Render at 20px beside text and 24px in larger controls. Keep a 4px minimum gap from the label. The clickable area is at least 44×44px, even when the glyph is small.
 - Use navy on paper, paper on navy, white on cobalt, navy on citron/vermilion. Do not place small vermilion icons on paper.
 - Use a CSS transform for direction only when meaning stays correct; do not rotate a calendar, file, play, or information symbol.
@@ -27,7 +27,13 @@ The icons are **navigation aids**, not a competing illustration language. Use si
 | [`play.svg`](icons/play.svg) | Replay available | V3 only, never a fake V1 player |
 | [`file.svg`](icons/file.svg) | Presentation or document | V3 only when a real resource exists |
 
-The decorative month glyphs in generated concepts have no fixed meaning and are **not** canonical icons. Use counts and written track/month context instead.
+## Season topic glyphs
+
+The season grid uses the original concept’s geometric vocabulary, redrawn in `src/TopicSymbol.tsx`: circles, overlaps, layers, triangles, squares, horizons, clusters, diamonds, paired bars, steps, checkerboards, hexagons, triads, split squares, asterisks, hourglasses and grids. They are monochrome, use `currentColor` on a 48×48 viewBox, and render at 34px (26px when a cell contains multiple topics).
+
+These are decorative topic associations, not status or track codes. Every glyph has an adjacent short topic label. `content/topics.yaml` assigns one label and symbol to each stable pair ID; the talk and workshop share this metadata. Multiple pairs show every label and glyph, plus a secondary topic count. Full session counts remain in accessible link names. An unpaired session falls back to its full title and a circle. Missing paired metadata fails content validation.
+
+Do not crop icons from the bitmap reference or substitute emoji. Preserve crisp vector geometry and give each glyph the same optical footprint.
 
 ## Accessibility and implementation
 

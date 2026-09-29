@@ -9,7 +9,7 @@
 | Site masthead | V1 | desktop, compact mobile | `header`, one `h1` |
 | Navigation | V1 | current, hover, focus | `nav`, links |
 | Button / action link | V1 | primary, secondary, text; hover, focus | `button` for action, `a` for navigation |
-| Season index | V1 | full 9×3, grouped 3×3, month jump grid | labelled navigation + links |
+| Season index | V1 | full 9×3, grouped 3×3, mobile month selector | labelled navigation + links |
 | Month cell | V1 | populated, empty, current focus | link when populated; text when empty |
 | Month chapter | V1 | occupied, empty | `section` with `h2` |
 | Track band | V1 | three tracks | `h3` inside section |
@@ -42,9 +42,9 @@ The masthead has the text lockup `AI CLUB`, `SFEIR LUXEMBOURG`, `SEASON 26–27`
 
 ## Season index and month cell
 
-The index is a **way to jump to the real month sections**, not a second copy of every card. Desktop ≥80rem shows nine month columns and three track rows. Tablet 48–79.99rem shows three sets of three months. Mobile <48rem shows a three-column month jump grid, followed by all month chapters with stacked tracks.
+The index is a **way to jump to the real month sections**, not a second copy of every card. Desktop ≥80rem shows nine month columns and three track rows. Tablet 48–79.99rem shows three sets of three months. Mobile <48rem shows a native month selector and three track/topic previews, followed by all month chapters with stacked tracks.
 
-Cell anatomy: month/year context, track name in its row or accessible name, count of approved public sessions or a clear empty mark. A populated cell links to its month/track anchor and gets an accessible label such as “November 2026, Engineering, two sessions.” A cell with no session is not a misleading link. Do not use a generic decorative glyph as the count or label. The currently visible month may have a subtle rule emphasis, but not a false “scheduled” badge.
+Cell anatomy: month/year context, track name, geometric SVG symbol and short topic label from `content/topics.yaml`. Deduplicate talk/workshop records by pair ID within each cell. A populated cell links to its month/track anchor; its accessible name includes month, track, every topic and the actual session count. Cells with multiple topics expose every symbol and label plus a secondary topic count. Empty cells say “No session planned” and are not links. Symbols are decorative, never substitutes for topic labels or status. Topic text wraps and cells grow with content. Hover underlines the topic; keyboard focus outlines the entire cell.
 
 The board's proposed lunch/workshop **pair** is not two scheduled events. When converted to content, each approved part gets its own card and independent status. Multiple cards can occupy the same cell; an empty cell remains honest.
 

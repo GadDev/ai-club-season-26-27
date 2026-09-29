@@ -80,3 +80,41 @@ export function validateSessions(records: unknown[]): Session[] {
       a.id.localeCompare(b.id),
   );
 }
+
+// Presentation metadata belongs to the topic pair, not either session.
+export const topicSchema = z.strictObject({
+  label: z.string().trim().min(1).max(32),
+  symbol: z.enum([
+    "circle",
+    "overlap",
+    "layers",
+    "triangle",
+    "square",
+    "horizon",
+    "cluster",
+    "diamond",
+    "pause",
+    "steps",
+    "checker",
+    "hexagon",
+    "triad",
+    "split",
+    "asterisk",
+    "hourglass",
+    "grid",
+  ]),
+});
+export type Topic = z.infer<typeof topicSchema>;
+export function validateTopics(records: unknown, sessions: Session[]) {
+  const topics = z
+    .record(z.string().regex(/^P\d{2}$/), topicSchema)
+    .parse(records);
+  const pairs = new Set(sessions.map((s) => s.pairId).filter(Boolean));
+  for (const pair of pairs) {
+    if (!topics[pair!]) throw new Error(`Missing topic metadata: ${pair}`);
+  }
+  for (const pair of Object.keys(topics)) {
+    if (!pairs.has(pair)) throw new Error(`Topic without sessions: ${pair}`);
+  }
+  return topics;
+}

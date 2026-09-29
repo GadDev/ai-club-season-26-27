@@ -1,3 +1,4 @@
+import { SeasonGrid } from "./SeasonGrid";
 import { SiteHeader, SiteFooter } from "./SiteChrome";
 import { SecondaryPage, sessionHref } from "./Pages";
 import { useEffect, useState } from "react";
@@ -62,61 +63,6 @@ function SessionCard({ session: s }: { session: Session }) {
     </article>
   );
 }
-function Matrix({ group }: { group: string[] }) {
-  return (
-    <table className="season-matrix">
-      <caption className="sr-only">
-        Session proposals and events by track, {monthLabel(group[0])} to{" "}
-        {monthLabel(group[group.length - 1])}
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">
-            <span className="meta">Three tracks</span>
-          </th>
-          {group.map((m) => (
-            <th scope="col" key={m}>
-              <a href={`#month-${m}`}>{monthLabel(m, true)}</a>
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {tracks.map((t) => (
-          <tr key={t.id}>
-            <th scope="row" className={`track-label ${t.id}`}>
-              {t.name}
-            </th>
-            {group.map((m) => {
-              const list = sessions.filter(
-                (s) => sessionMonth(s) === m && s.track === t.id,
-              );
-              return (
-                <td key={m}>
-                  {list.length ? (
-                    <a
-                      href={`#${m}-${t.id}`}
-                      aria-label={`${monthLabel(m)}, ${t.name}, ${list.length} sessions`}
-                    >
-                      <span
-                        className={`count-mark ${t.id}`}
-                        aria-hidden="true"
-                      />
-                      {list.length}
-                      <span className="sr-only"> sessions</span>
-                    </a>
-                  ) : (
-                    <span aria-label="No session planned">—</span>
-                  )}
-                </td>
-              );
-            })}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
 export function App() {
   const [now, setNow] = useState(Date.now);
   useEffect(() => {
@@ -155,28 +101,13 @@ export function App() {
             The season at a glance.
           </h2>
           <p className="programme-note">
+            <span className="programme-year">2026–2027</span>{" "}
             <strong>Programme in progress.</strong>{" "}
             {sessions.some((s) => s.status === "scheduled")
               ? "Check each session for its proposed or confirmed status."
               : `${new Set(sessions.map((s) => s.pairId).filter(Boolean)).size} topic pairs proposed across three tracks; dates are not confirmed yet.`}
           </p>
-          <div className="wide-index">
-            <Matrix group={months} />
-          </div>
-          <div className="tablet-index">
-            {[0, 3, 6].map((n) => (
-              <Matrix key={n} group={months.slice(n, n + 3)} />
-            ))}
-          </div>
-          <nav className="mobile-index" aria-label="Jump to month">
-            {months.map((m) => (
-              <a key={m} href={`#month-${m}`}>
-                <span>{monthLabel(m, true).split(" ")[0]}</span>
-                <small>{m.slice(0, 4)}</small>
-                <Arrow />
-              </a>
-            ))}
-          </nav>
+          <SeasonGrid sessions={sessions} />
         </section>
         <section className="featured-band" aria-label="Programme highlights">
           <aside className="feature-intro">

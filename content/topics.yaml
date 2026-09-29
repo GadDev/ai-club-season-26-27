@@ -1,0 +1,32 @@
+# One compact label and reference-style glyph per talk/workshop pair.
+# Full titles, dates, formats and statuses remain in sessions/.
+P01: { label: "How LLMs work", symbol: layers }
+P02: { label: "Embeddings", symbol: cluster }
+P03: { label: "AI & randomness", symbol: circle }
+P04: { label: "Reasoning models", symbol: triangle }
+P05: { label: "Multimodal AI", symbol: horizon }
+P06: { label: "AI architecture", symbol: square }
+P07: { label: "Agent anatomy", symbol: steps }
+P08: { label: "Browser agents", symbol: steps }
+P09: { label: "Prompt optimization", symbol: layers }
+P10: { label: "Structured outputs", symbol: grid }
+P11: { label: "Synthetic data", symbol: cluster }
+P12: { label: "Voice AI", symbol: pause }
+P13: { label: "AI gateways", symbol: hexagon }
+P14: { label: "Local AI", symbol: square }
+P15: { label: "Model cascades", symbol: steps }
+P16: { label: "Durable agents", symbol: hourglass }
+P17: { label: "Human oversight", symbol: overlap }
+P18: { label: "GraphRAG", symbol: triad }
+P19: { label: "AI evaluations", symbol: overlap }
+P20: { label: "Observability", symbol: checker }
+P21: { label: "AI costs", symbol: diamond }
+P22: { label: "AI benchmarks", symbol: split }
+P23: { label: "Reliability", symbol: pause }
+P24: { label: "AI incidents", symbol: asterisk }
+P25: { label: "Prompt injection", symbol: split }
+P26: { label: "Guardrails", symbol: split }
+P27: { label: "AI supply chain", symbol: grid }
+P28: { label: "Identity & access", symbol: diamond }
+P29: { label: "EU AI rules", symbol: layers }
+P30: { label: "When to use AI", symbol: diamond }
