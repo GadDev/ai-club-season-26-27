@@ -22,7 +22,7 @@ The root [DESIGN_SYSTEM.md](../DESIGN_SYSTEM.md) states the product principles a
 2. These written component and layout rules, together with `tokens.css`, define implementation behavior.
 3. The images show art direction and hierarchy. Generated words, dates, counts, status colors, and controls in them are illustrative and may be inconsistent.
 
-Build V1 in this order: static content validation → semantic month and track sections → season index → session cards and honest empty states → responsive layout → visual accents. V2 voting and V3 materials are documented as future patterns only; they do not belong in the initial component bundle.
+Build V1 in this order: static content validation → semantic month and track sections → season index → session cards and honest empty states → responsive layout → visual accents. Voting and materials have explicitly labelled preview pages following the September 29 design expansion. These previews contain no authentication, vote collection, player, or unapproved resource links.
 
 ## Design review checklist
 
@@ -31,4 +31,4 @@ Build V1 in this order: static content validation → semantic month and track s
 - Every meaningful control has visible text or an accessible name, keyboard focus, and a 44px target.
 - Track colors are always named. Status is always written. Texture never sits behind small text.
 - At 360px and 200% zoom, titles wrap, controls remain reachable, and no content is clipped.
-- The UI contains no public presenter identity, fake event, vote button, replay player, or private meeting link in V1.
+- The UI contains no public presenter identity, fake event, vote button, replay player, or private meeting link.

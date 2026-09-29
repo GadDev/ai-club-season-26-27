@@ -1,3 +1,5 @@
+import { SiteHeader, SiteFooter } from "./SiteChrome";
+import { SecondaryPage, sessionHref } from "./Pages";
 import { useEffect, useState } from "react";
 import data from "./content/generated.json";
 import {
@@ -29,7 +31,7 @@ function SessionCard({ session: s }: { session: Session }) {
   return (
     <article
       id={s.id}
-      className={`session-card ${s.status}`}
+      className={`session-card ${s.status} ${s.track}`}
       aria-labelledby={`${s.id}-title`}
     >
       <div className="card-top">
@@ -49,6 +51,9 @@ function SessionCard({ session: s }: { session: Session }) {
           `Target: ${monthLabel(sessionMonth(s))}`
         )}
       </div>
+      <a className="session-link" href={sessionHref(s.id)}>
+        View details <Arrow />
+      </a>
       {s.location && <p className="card-meta">Location: {s.location}</p>}
       {s.status === "cancelled" && s.reason && <p>{s.reason}</p>}
     </article>
@@ -116,62 +121,42 @@ export function App() {
     return () => clearInterval(id);
   }, []);
   const next = nextEvent(sessions, now);
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get("session");
+  const page = sessionId ? "session" : params.get("page") || "season";
+  useEffect(() => {
+    const selected = sessions.find((s) => s.id === sessionId);
+    document.title = `${selected?.title || { about: "About", voting: "Voting preview", materials: "Materials preview" }[page] || "Season 26–27"} — AI Club SFEIR Luxembourg`;
+  }, [page, sessionId]);
+  if (page !== "season")
+    return (
+      <SecondaryPage
+        page={page}
+        session={sessions.find((s) => s.id === sessionId)}
+        sessions={sessions}
+      />
+    );
+  const featured = tracks
+    .map((t) => sessions.find((s) => s.track === t.id))
+    .filter((s): s is Session => Boolean(s));
   return (
     <>
       <a className="skip-link" href="#season">
         Skip to the season
       </a>
-      <header className="masthead">
-        <div className="shell">
-          <nav className="top-nav" aria-label="Main">
-            <span className="meta">SFEIR / LUXEMBOURG</span>
-            <div>
-              <a href="#season">
-                Season <Arrow />
-              </a>
-              <a href="#about">About</a>
-            </div>
-          </nav>
-          <div className="hero">
-            <div>
-              <p className="eyebrow">Ideas. Practice. Deeper understanding.</p>
-              <h1>
-                AI CLUB<span className="sr-only"> — Season 2026–2027</span>
-              </h1>
-              <p className="hero-note">A whole season of new perspectives.</p>
-            </div>
-            <div className="season-number" aria-hidden="true">
-              <span>26</span>
-              <span>27</span>
-            </div>
-          </div>
-          <div className="hero-footer">
-            <span>OCTOBER 2026 — JUNE 2027</span>
-            <span>
-              THE SIGNAL INDEX <Arrow />
-            </span>
-          </div>
-        </div>
-      </header>
-      <main id="season" className="shell" tabIndex={-1}>
+      <SiteHeader />
+      <main id="season" tabIndex={-1}>
+        <h1 className="sr-only">AI Club — Season 2026–2027</h1>
         <section className="overview" aria-labelledby="overview-title">
-          <div className="section-intro">
-            <div>
-              <p className="eyebrow">01 / THE PROGRAMME</p>
-              <h2 id="overview-title">The season at a glance.</h2>
-            </div>
-            <p>
-              Three parallel tracks.
-              <br />
-              Find your entry point.
-            </p>
-          </div>
-          {data.season.editorialStatus === "draft" && (
-            <p className="draft-note">
-              <strong>Programme in progress.</strong> These are proposed topics
-              and months. Dates are not confirmed yet.
-            </p>
-          )}
+          <h2 id="overview-title" className="sr-only">
+            The season at a glance.
+          </h2>
+          <p className="programme-note">
+            <strong>Programme in progress.</strong>{" "}
+            {sessions.some((s) => s.status === "scheduled")
+              ? "Check each session for its proposed or confirmed status."
+              : "Proposed topics and months; dates are not confirmed yet."}
+          </p>
           <div className="wide-index">
             <Matrix group={months} />
           </div>
@@ -190,30 +175,37 @@ export function App() {
             ))}
           </nav>
         </section>
-        <aside className={`next-event ${next ? "" : "is-empty"}`} aria-labelledby="next-title">
-          <div>
+        <section className="featured-band" aria-label="Programme highlights">
+          <aside className="feature-intro">
             <p className="eyebrow">NEXT CONFIRMED EVENT</p>
-            <h2 id="next-title">
-              {next ? next.title : "No date confirmed yet."}
-            </h2>
+            <h2>{next ? next.title : "No date confirmed yet."}</h2>
             <p>
               {next
                 ? dateLabel(next.startsAt)
-                : "Explore the proposals below. We’ll add dates as the programme takes shape."}
+                : "Same curiosity. A whole season of ideas to explore."}
             </p>
-            {next?.location && <p>Location: {next.location}</p>}
-          </div>
-          {next ? (
-            <a className="button" href={`#${next.id}`}>
-              View session <Arrow />
-            </a>
-          ) : (
-            <span className="next-arrow" aria-hidden="true">
+            {next && (
+              <a className="button" href={sessionHref(next.id)}>
+                View session →
+              </a>
+            )}
+            <span className="feature-arrow" aria-hidden="true">
               ↗
             </span>
-          )}
-        </aside>
-        <div className="chapters">
+          </aside>
+          {featured.map((s, i) => (
+            <article className={`editorial-card ${s.track}`} key={s.id}>
+              <span className="meta">
+                0{i + 1} / {monthLabel(sessionMonth(s), true)}
+              </span>
+              <span className="status">{s.status}</span>
+              <h3>{s.title}</h3>
+              <p>{s.summary}</p>
+              <a href={sessionHref(s.id)}>View proposal →</a>
+            </article>
+          ))}
+        </section>
+        <div className="chapters shell">
           {months.map((m, i) => (
             <section
               key={m}
@@ -254,10 +246,7 @@ export function App() {
                             <SessionCard key={s.id} session={s} />
                           ))
                         ) : (
-                          <p className="empty-state">
-                            No session planned yet.
-
-                          </p>
+                          <p className="empty-state">No session planned yet.</p>
                         )}
                       </div>
                     </section>
@@ -267,7 +256,11 @@ export function App() {
             </section>
           ))}
         </div>
-        <section id="about" className="about" aria-labelledby="about-title">
+        <section
+          id="about"
+          className="about shell"
+          aria-labelledby="about-title"
+        >
           <p className="eyebrow">SFEIR LUXEMBOURG / AI CLUB</p>
           <h2 id="about-title">
             Learn together.
@@ -279,15 +272,12 @@ export function App() {
             Foundations, Engineering and Deep Dive describe your familiarity
             with a subject — not your seniority.
           </p>
-          <a href="#season" className="button">
-            Explore the season <Arrow />
+          <a href="?page=about" className="button">
+            About the club <Arrow />
           </a>
         </section>
       </main>
-      <footer className="site-footer shell">
-        <span>AI CLUB / SFEIR LUXEMBOURG</span>
-        <span>SEASON 26–27</span>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

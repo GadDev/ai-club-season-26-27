@@ -38,7 +38,7 @@
 
 ## Site masthead and navigation
 
-The masthead has the text lockup `AI CLUB`, `SFEIR LUXEMBOURG`, `SEASON 26–27`, and a brief promise on a navy surface. Keep the compressed type in the masthead only. One cut-paper seam or cobalt printed accent is enough. Navigation contains `Season` and `About` only if those destinations exist. Mark the current page with `aria-current="page"`, a short vermilion underline, and a text label. On mobile, the layout stacks without hiding the season behind a menu.
+The masthead has the text lockup `AI CLUB`, `SFEIR LUXEMBOURG`, `SEASON 26–27`, and a brief promise on a navy surface. Use the condensed display face for masthead and editorial headings; retain the reading face for paragraphs. One cut-paper seam or cobalt printed accent is enough. Primary navigation contains `Season` and `About`. The footer also links to the clearly labelled voting and materials previews. Mark the current page with `aria-current="page"`, a short vermilion underline, and a text label. On mobile, the layout stacks without hiding the season behind a menu.
 
 ## Season index and month cell
 

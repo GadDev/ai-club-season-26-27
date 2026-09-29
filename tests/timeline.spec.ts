@@ -10,7 +10,9 @@ for (const width of [360, 768, 1440]) {
       page.getByRole("heading", { name: "No date confirmed yet." }),
     ).toBeVisible();
     await expect(page.locator(".session-card")).toHaveCount(16);
-    await expect(page.locator(".session-card .status", { hasText: "Proposed" })).toHaveCount(16);
+    await expect(
+      page.locator(".session-card .status", { hasText: "Proposed" }),
+    ).toHaveCount(16);
     await expect(page.locator(".month-chapter")).toHaveCount(9);
     expect(
       await page.evaluate(
@@ -35,7 +37,11 @@ for (const width of [360, 768, 1440]) {
     await page.keyboard.press("Enter");
     await expect(page.locator("#season")).toBeFocused();
     if (width !== 360) {
-      await page.locator(".season-matrix:visible").first().getByRole("link", { name: /October 2026, Foundations/ }).click();
+      await page
+        .locator(".season-matrix:visible")
+        .first()
+        .getByRole("link", { name: /October 2026, Foundations/ })
+        .click();
       await expect(page.locator('[id="2026-10-foundations"]')).toBeFocused();
     }
     if (width === 360) {
@@ -45,6 +51,56 @@ for (const width of [360, 768, 1440]) {
         .click();
       await expect(page).toHaveURL(/#month-2027-06$/);
       await expect(page.locator("#month-2027-06")).toBeFocused();
+    }
+  });
+}
+for (const width of [360, 1440]) {
+  test(`secondary pages and session navigation at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto("./");
+    await page.locator(".session-link").first().click();
+    await expect(page).toHaveURL(/session=p01-talk/);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      "How Does an LLM Actually Work? Without the Maths",
+    );
+    await expect(
+      page.getByText("Not confirmed yet.", { exact: true }),
+    ).toBeVisible();
+    await page.getByRole("link", { name: "Back to this session" }).click();
+    await expect(page).toHaveURL(/#p01-talk$/);
+    for (const path of [
+      "?page=about",
+      "?page=voting",
+      "?page=materials",
+      "?session=p01-talk",
+      "?session=missing",
+    ]) {
+      await page.goto(`./${path}`);
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+      expect(
+        (
+          await new AxeBuilder({ page })
+            .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+            .analyze()
+        ).violations,
+      ).toEqual([]);
+      await page.screenshot({
+        path: `test-results/page-${path.slice(1).replace("=", "-")}-${width}.png`,
+        fullPage: true,
+      });
+      if (path === "?page=voting") {
+        await expect(
+          page.getByText("Voting is not open.", { exact: true }),
+        ).toBeVisible();
+        await expect(page.getByRole("radio")).toHaveCount(0);
+      }
     }
   });
 }

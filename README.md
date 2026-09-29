@@ -8,7 +8,7 @@ The release sequence is deliberately small:
 2. **Voting:** let each eligible SFEIR account holder choose one proposed topic under clear rules.
 3. **Materials:** provide approved presentations and replays, initially as links.
 
-The repository contains a **working V1 timeline**: a responsive nine-month timeline, 16 separate draft talk/workshop proposals, validated YAML content, and the Signal Index design. There are no verified scheduled events; the page says so explicitly. The GitHub Pages workflow builds, validates, and tests the programme before publication.
+The repository contains a **working V1 timeline**: a responsive nine-month timeline, 16 separate draft talk/workshop proposals, public session-detail and About pages, validated YAML content, and the Signal Index design. There are no verified scheduled events; the page says so explicitly. The GitHub Pages workflow builds, validates, and tests the programme before publication.
 
 Public programme: https://gaddev.github.io/ai-club-season-26-27/
 
@@ -47,3 +47,7 @@ The build validates content and TypeScript before producing `dist/`. CI runs the
 In repository Settings → Pages, select **GitHub Actions** as the source. Pushes to `main` run **Publish programme**; deployment follows a successful production build, content tests, and browser checks. The workflow can also be run manually.
 
 Next: confirm the first session’s topic, date, Luxembourg-local time, and public location. Until then, all entries remain proposals.
+
+## Page layouts
+
+The shared poster masthead and footer connect the season, About (`?page=about`), and session details (`?session=<id>`). Voting (`?page=voting`) and materials (`?page=materials`) are clearly labelled visual previews: no votes, accounts, or resources are available. Query-based links support refresh and direct linking on GitHub Pages.

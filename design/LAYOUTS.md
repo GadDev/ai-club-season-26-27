@@ -1,13 +1,13 @@
 # Layouts — Signal Index
 
-V1 is one public page with a season overview and chronological chapters. The whole programme remains navigable even if no event has a confirmed date. The page references provide rhythm; the written rules below govern behavior.
+The public season page has a season overview and chronological chapters. Session details and About have separate navigable views. The whole programme remains navigable even if no event has a confirmed date. The page references provide rhythm; the written rules below govern behavior.
 
 ## Page order
 
 1. Skip link and compact navigation.
 2. Masthead with `AI CLUB`, `SFEIR LUXEMBOURG`, `SEASON 26–27`, and a short promise.
 3. “The season at a glance” index, covering October 2026 through June 2027 and all three tracks.
-4. Next confirmed event panel, or “No date confirmed yet.”
+4. Dark featured band: next confirmed event or “No date confirmed yet.” beside three representative proposals (one on mobile). These are editorial highlights, not confirmed events.
 5. Nine chronological month chapters. Each chapter contains Foundations, Engineering, and Deep Dive, including truthful empty states. Empty tracks use a compact heading, coloured top rule, and one-line message; full colour bands are reserved for populated tracks.
 6. Footer with basic club context and links that actually exist.
 
@@ -51,3 +51,13 @@ Keep actions beneath readable summaries instead of floating them over imagery. A
 ## Hero texture
 
 The implementation uses `src/assets/hero-print.svg`: scalable torn-paper shapes, sparse ink strokes, and seeded grain. It is decorative, has no pointer events, and carries no programme information. Keep it around the season mark and away from the reading area. Use no animation or full-page texture.
+
+## Shared page shell and navigation
+
+The masthead uses a full-width poster composition: large AI CLUB wordmark and drawn arrow, adjacent SFEIR Luxembourg/season lockup, a cut-paper print fragment, and large season numerals. The index runs edge-to-edge below it. The footer repeats the navy surface with a club statement, real navigation links, season dates, and back-to-top.
+
+GitHub Pages views use query parameters so deep links and refreshes work without server rewrites: `?page=about`, `?session=<id>`, `?page=voting`, and `?page=materials`. A missing session shows a recovery link. Main-page month and card anchors remain valid.
+
+Voting and materials are labelled design previews throughout. No account verification, ballot submission, completed-session status, player, or downloadable resource is fabricated. Session details use the actual YAML record; unpublished resources get an honest empty state.
+
+Visual fidelity targets the reference's hierarchy, proportions, typography, surfaces, and print motifs. Generated sample content and fixed image dimensions are not pixel-level acceptance criteria for responsive pages.
