@@ -62,7 +62,7 @@ For the project Pages URL, set Vite `base` to `/ai-club-season-26-27/`. This rep
 
 ## V2: SFEIR-account voting
 
-Voting changes the system boundary. Keep the timeline content and stable session IDs. Add an identity flow using the SFEIR-approved account provider, a server-side API, and durable storage for eligibility and votes. The server must enforce the agreed rule for each eligible account; a disabled UI button or local storage is insufficient. Define the ballot, voting window, change/retraction policy, tie handling, audit needs, and who confirms the final selection before selecting a provider or database.
+Voting changes the system boundary. Keep the timeline content and stable session IDs. Add an identity flow using the SFEIR-approved account provider, a server-side API, and durable storage for eligibility and votes. The server must enforce one effective choice per eligible SFEIR account; a disabled UI button or local storage is insufficient. Define the ballot, voting window, change/retraction policy, tie handling, audit needs, and how the result becomes a final selection before selecting a provider or database.
 
 A static frontend may remain on Pages while calling an authenticated API if the organization approves that deployment and origin model. Alternatively, move the application to a host with integrated server rendering. GitHub Pages itself cannot process protected votes. Do not prebuild authentication or a database for V1.
 
