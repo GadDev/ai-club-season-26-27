@@ -13,5 +13,7 @@ The repository is at **V0: map the programme**. It contains product documents; n
 - [Mission](MISSION.md): purpose, tracks, and release sequence.
 - [Constitution](CONSTITUTION.md): product and editorial principles.
 - [Technical stack](TECH_STACK.md): V1 architecture and later system boundaries.
+- [Art direction](ART_DIRECTION.md): explored visual branches and the Season Index choice.
+- [Design system](DESIGN_SYSTEM.md): colour, typography, timeline, component, and accessibility rules; [CSS tokens](design/tokens.css).
 
 Next: inventory delivered, planned, and brainstormed sessions, then create a first October–June timeline dataset with explicit status and no invented dates or presenters.
