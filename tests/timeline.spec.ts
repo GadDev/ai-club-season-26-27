@@ -104,3 +104,12 @@ for (const width of [360, 1440]) {
     }
   });
 }
+test('hero preserves the original reference dimensions', async ({ page }) => {
+  await page.setViewportSize({ width: 1672, height: 1000 });
+  await page.goto('./');
+  const hero = page.locator('.reference-hero');
+  await expect(hero.locator('img')).toBeVisible();
+  await hero.locator('img').evaluate((img: HTMLImageElement) => img.decode());
+  expect(await hero.boundingBox()).toMatchObject({x:0, y:0, width:1672, height:281});
+  await hero.screenshot({path:'test-results/hero-native.png'});
+});

@@ -1213,3 +1213,35 @@ h2 {
     font-size: 52px;
   }
 }
+
+/* The approved original artwork is the hero, not a CSS recreation.
+   Its header occupies precisely the first 281 rows of the 1672 × 941 source. */
+.reference-hero {
+  width: 100%;
+  aspect-ratio: 1672 / 281;
+  overflow: hidden;
+  position: relative;
+}
+.reference-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+.reference-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 24px;
+  border-top: 1px solid #69737b;
+  font: 14px var(--font-meta);
+}
+.reference-nav > div { display: flex; gap: 24px; }
+.reference-nav a { min-height: 44px; display: flex; align-items: center; }
+.reference-nav a[aria-current] { text-decoration-color: var(--color-vermilion); text-decoration-thickness: 3px; }
+@media (max-width: 47.999rem) {
+  .reference-nav { padding-inline: 16px; gap: 12px; }
+  .reference-home { max-width: 140px; }
+  .reference-nav > div { gap: 16px; }
+}

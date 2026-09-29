@@ -1,45 +1,17 @@
+import heroReference from "../design/references/signal-index-concept.webp";
+
 export function SiteHeader({ page = "season" }: { page?: string }) {
   return (
     <header className="masthead" id="top">
-      <div className="poster-head">
-        <a href="?" className="poster-wordmark" aria-label="AI Club home">
-          AI CLUB
-          <svg viewBox="0 0 180 60" aria-hidden="true">
-            <path d="M4 52 163 10M128 4l38 5-25 28" />
-          </svg>
-        </a>
-        <div className="poster-context">
-          <p>
-            SFEIR
-            <br />
-            <span>LUXEMBOURG</span>
-          </p>
-          <strong>SEASON 26–27</strong>
-          <span className="poster-rule" />
-          <span className="meta">
-            Ideas. Practice. <br />
-            Deeper understanding.
-          </span>
-        </div>
-        <nav className="poster-nav" aria-label="Main">
-          <a
-            href="?#season"
-            aria-current={page === "season" ? "page" : undefined}
-          >
-            Season
-          </a>
-          <a
-            href="?page=about"
-            aria-current={page === "about" ? "page" : undefined}
-          >
-            About
-          </a>
-        </nav>
-        <div className="poster-year" aria-hidden="true">
-          <span>26</span>
-          <span>27</span>
-        </div>
+      <div className="reference-hero">
+        <img src={heroReference} width="1672" height="941" fetchPriority="high"
+          alt="AI Club. Season 26–27. Ideas. Practice. Deeper understanding. The Signal Index: a nine-month journey from curiosity to real impact." />
       </div>
+      <nav className="reference-nav" aria-label="Main">
+        <a className="reference-home" href="?">SFEIR / LUXEMBOURG</a>
+        <div><a href="?#season" aria-current={page === "season" ? "page" : undefined}>Season</a>
+        <a href="?page=about" aria-current={page === "about" ? "page" : undefined}>About</a></div>
+      </nav>
     </header>
   );
 }

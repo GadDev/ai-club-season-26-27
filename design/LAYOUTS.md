@@ -61,3 +61,7 @@ GitHub Pages views use query parameters so deep links and refreshes work without
 Voting and materials are labelled design previews throughout. No account verification, ballot submission, completed-session status, player, or downloadable resource is fabricated. Session details use the actual YAML record; unpublished resources get an honest empty state.
 
 Visual fidelity targets the reference's hierarchy, proportions, typography, surfaces, and print motifs. Generated sample content and fixed image dimensions are not pixel-level acceptance criteria for responsive pages.
+
+## Exact hero artwork — supersedes the poster reconstruction
+
+The user requires exact fidelity to `references/signal-index-concept.webp`. `SiteHeader` renders that source directly and clips it with CSS to its original header bounds: 1672 × 281 pixels. At 1672 CSS pixels wide, the hero must match the source crop pixel for pixel. At other widths, scale the whole artwork uniformly; do not retypeset, recolor, regenerate, or reposition any part. This intentionally uses image lettering, with equivalent alternative text. Navigation is a separate 44px-minimum-height row below the artwork, keeping readable links on mobile without altering the reference hero. The same artwork appears on every page.
