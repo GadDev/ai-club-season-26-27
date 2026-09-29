@@ -35,7 +35,10 @@ function SessionCard({ session: s }: { session: Session }) {
       aria-labelledby={`${s.id}-title`}
     >
       <div className="card-top">
-        <span className="meta">{s.format.join(" + ")}</span>
+        <span className="meta">
+          {s.pairId ? `${s.pairId} / ` : ""}
+          {s.format.join(" + ")}
+        </span>
         <span className="status">
           {s.status === "proposed" ? "Proposed" : s.status}
         </span>
@@ -155,7 +158,7 @@ export function App() {
             <strong>Programme in progress.</strong>{" "}
             {sessions.some((s) => s.status === "scheduled")
               ? "Check each session for its proposed or confirmed status."
-              : "Proposed topics and months; dates are not confirmed yet."}
+              : `${new Set(sessions.map((s) => s.pairId).filter(Boolean)).size} topic pairs proposed across three tracks; dates are not confirmed yet.`}
           </p>
           <div className="wide-index">
             <Matrix group={months} />

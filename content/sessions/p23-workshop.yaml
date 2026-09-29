@@ -1,0 +1,10 @@
+id: "p23-workshop"
+pairId: "P23"
+title: "AI Chaos Engineering"
+summary: "Inject tool errors and slow responses into a scenario, then design safe recovery behavior."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-05"
+editorialOrder: 1

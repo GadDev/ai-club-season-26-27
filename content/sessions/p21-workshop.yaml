@@ -1,0 +1,10 @@
+id: "p21-workshop"
+pairId: "P21"
+title: "Cut the €100K AI Bill"
+summary: "Reduce a fictional monthly bill with routing, caching, and context choices without hiding quality loss."
+track: "engineering"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-04"
+editorialOrder: 1

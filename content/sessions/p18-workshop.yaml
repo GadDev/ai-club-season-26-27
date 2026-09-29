@@ -1,0 +1,10 @@
+id: "p18-workshop"
+pairId: "P18"
+title: "Design a Relationship-Aware Knowledge System"
+summary: "Model entities and links for a small corpus, then compare answers with plain chunk retrieval."
+track: "deep-dive"
+domain: "build-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 1

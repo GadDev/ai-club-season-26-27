@@ -1,0 +1,10 @@
+id: "p23-talk"
+pairId: "P23"
+title: "Reliability Engineering for AI Systems"
+summary: "Plan timeouts, retries, fallback, and budgets for unpredictable model-and-tool chains."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-05"
+editorialOrder: 0

@@ -1,0 +1,10 @@
+id: "p03-talk"
+pairId: "P03"
+title: "Why Does the Same Prompt Give Different Answers?"
+summary: "Explore how sampling choices affect variation, repeatability, and the usefulness of an answer."
+track: "foundations"
+domain: "understand-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-11"
+editorialOrder: 0

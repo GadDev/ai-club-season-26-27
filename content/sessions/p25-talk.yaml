@@ -1,0 +1,10 @@
+id: "p25-talk"
+pairId: "P25"
+title: "Prompt Injection: Why AI Reads Data as Instructions"
+summary: "Extend the earlier agent-security discussion with controlled attacks and concrete boundaries."
+track: "engineering"
+domain: "develop-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-03"
+editorialOrder: 2

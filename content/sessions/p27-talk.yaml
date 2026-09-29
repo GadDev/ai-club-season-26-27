@@ -1,0 +1,10 @@
+id: "p27-talk"
+pairId: "P27"
+title: "The AI Supply Chain: Can You Trust Models, Tools and Plugins?"
+summary: "Map the trust placed in models, dependencies, datasets, tools, and plugin updates."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-03"
+editorialOrder: 0

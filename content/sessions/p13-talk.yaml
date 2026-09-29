@@ -1,0 +1,10 @@
+id: "p13-talk"
+pairId: "P13"
+title: "AI Gateways: Is AI Having Its API Gateway Moment?"
+summary: "Examine routing, policy, budgets, and observability across multiple model providers."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-11"
+editorialOrder: 0

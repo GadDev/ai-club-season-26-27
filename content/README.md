@@ -1,6 +1,6 @@
 # Editing the programme
 
-`season.yaml` describes the season. Each `sessions/*.yaml` file is one talk or workshop. The initial 16 records preserve the eight pairs in `SEASON_BOARD.md` as **draft proposals**, with the banner controlled by `editorialStatus: draft`. Neither part of a pair inherits a booking from the other.
+`season.yaml` describes the season. Each `sessions/*.yaml` file is one talk or workshop. The 60 records place all 30 topic pairs from `SEASON_BOARD.md` as **draft proposals**, with the banner controlled by `editorialStatus: draft`. Neither part of a pair inherits a booking from the other.
 
 Run `npm run content:validate` after edits, or restart `npm run dev`. This checks the schema, status/date combinations, duplicate IDs, and Luxembourg-local month boundaries. The generated browser JSON is ignored by Git and rebuilt before development and production builds.
 
@@ -9,6 +9,7 @@ Run `npm run content:validate` after edits, or restart `npm run dev`. This check
 - `cancelled`: retain exactly one of `startsAt` or `targetMonth`, with an optional reason.
 - Add `location` when the public venue or online location is verified. Do not publish private meeting links.
 - Keep IDs stable, public summaries readable, and formats separate from audience tracks.
+- A pair has exactly one talk and one workshop with the same `pairId`, track, and target month while both are proposals. Keep their `editorialOrder` adjacent so they read as a pair in the timeline.
 - Presenter fields, private links, and unknown properties are rejected by the strict schema.
 
-The 22 unplaced pairs and prior-coverage notes remain in the editorial board. They are not automatically published by the application. Changes merged into `main` are published by the GitHub Pages workflow after validation and browser checks.
+All 30 pairs are visible as proposals; this is a programming backlog, not a promise to run 60 events. Prior-coverage notes remain in the editorial board. Changes merged into `main` are published by the GitHub Pages workflow after validation and browser checks.

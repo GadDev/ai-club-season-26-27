@@ -1,0 +1,10 @@
+id: "p04-talk"
+pairId: "P04"
+title: "Reasoning Models: Does Thinking Longer Make AI Smarter?"
+summary: "Compare when additional reasoning effort helps, wastes time, or changes the answer."
+track: "foundations"
+domain: "understand-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-02"
+editorialOrder: 0

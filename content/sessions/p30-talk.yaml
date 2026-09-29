@@ -1,0 +1,10 @@
+id: "p30-talk"
+pairId: "P30"
+title: "When Should We Use AI?"
+summary: "Use problem fit, risk, and cost to decide when an AI feature earns its complexity."
+track: "foundations"
+domain: "understand-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-06"
+editorialOrder: 0

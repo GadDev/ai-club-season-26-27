@@ -1,0 +1,10 @@
+id: "p16-workshop"
+pairId: "P16"
+title: "The Agent That Crashed at Step 47"
+summary: "Recover a failed multi-step job using retries, checkpoints, compensation, and human escalation."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-01"
+editorialOrder: 1

@@ -1,0 +1,10 @@
+id: "p29-workshop"
+pairId: "P29"
+title: "Classify and Redesign AI Systems"
+summary: "Classify example features and redesign their data, disclosure, oversight, and evidence paths."
+track: "engineering"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-06"
+editorialOrder: 1

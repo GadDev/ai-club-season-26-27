@@ -1,0 +1,10 @@
+id: "p28-workshop"
+pairId: "P28"
+title: "Design Zero Trust for AI"
+summary: "Assign scopes and lifetimes to a multi-tool agent, then test escalation and revocation cases."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 1

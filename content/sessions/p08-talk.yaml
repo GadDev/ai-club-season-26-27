@@ -1,0 +1,10 @@
+id: "p08-talk"
+pairId: "P08"
+title: "Browser and Computer-Use Agents: AI Gets a Mouse"
+summary: "Watch an agent navigate a web task and learn how to judge completion and intervention."
+track: "foundations"
+domain: "build-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-01"
+editorialOrder: 0

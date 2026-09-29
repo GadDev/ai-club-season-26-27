@@ -1,0 +1,10 @@
+id: "p18-talk"
+pairId: "P18"
+title: "GraphRAG and Knowledge Graphs: When Chunks Aren't Enough"
+summary: "Compare document retrieval with relationship-aware queries for connected questions."
+track: "deep-dive"
+domain: "build-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 0

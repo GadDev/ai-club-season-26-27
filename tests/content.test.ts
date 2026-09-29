@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { validateSessions } from "../src/content/schema";
 import { sessionMonth, nextEvent } from "../src/content/model";
+import data from "../src/content/generated.json";
 const proposal = {
   id: "test-talk",
   title: "Test",
@@ -17,6 +18,36 @@ const event = (startsAt: string, status = "scheduled") => {
   return { ...rest, status, startsAt };
 };
 describe("editorial data boundaries", () => {
+  it("places all 30 proposal pairs as separate talks and workshops", () => {
+    const sessions = validateSessions(data.sessions);
+    const pairs = new Map<string, typeof sessions>();
+    for (const session of sessions) {
+      expect(session.pairId).toBeDefined();
+      pairs.set(session.pairId!, [
+        ...(pairs.get(session.pairId!) ?? []),
+        session,
+      ]);
+    }
+    expect(sessions).toHaveLength(60);
+    expect([...pairs.keys()].sort()).toEqual(
+      Array.from(
+        { length: 30 },
+        (_, i) => `P${String(i + 1).padStart(2, "0")}`,
+      ),
+    );
+    for (const pair of pairs.values()) {
+      expect(pair).toHaveLength(2);
+      expect(pair.map((s) => s.format.join("+")).sort()).toEqual([
+        "talk",
+        "workshop",
+      ]);
+      expect(new Set(pair.map((s) => s.track)).size).toBe(1);
+      if (pair.every((session) => session.status === "proposed")) {
+        expect(new Set(pair.map(sessionMonth)).size).toBe(1);
+      }
+      expect(Math.abs(pair[0].editorialOrder - pair[1].editorialOrder)).toBe(1);
+    }
+  });
   it("keeps proposals out of next event", () =>
     expect(nextEvent(validateSessions([proposal]), 0)).toBeUndefined());
   it("rejects duplicate IDs, private fields and invented proposal days", () => {

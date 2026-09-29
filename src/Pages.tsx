@@ -12,6 +12,9 @@ export function SecondaryPage({
   sessions: Session[];
 }) {
   const track = tracks.find((t) => t.id === session?.track);
+  const companion = session?.pairId
+    ? sessions.find((s) => s.pairId === session.pairId && s.id !== session.id)
+    : undefined;
   const title =
     session?.title ??
     {
@@ -66,6 +69,13 @@ export function SecondaryPage({
                     : "About this session"}
                 </h2>
                 <p>{session.summary}</p>
+                {companion && (
+                  <p>
+                    <a href={sessionHref(companion.id)}>
+                      Explore the companion {companion.format.join(" + ")} →
+                    </a>
+                  </p>
+                )}
                 <dl>
                   <dt>Track</dt>
                   <dd>

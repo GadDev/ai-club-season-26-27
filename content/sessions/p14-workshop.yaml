@@ -1,7 +1,7 @@
 id: "p14-workshop"
 pairId: "P14"
 title: "Cloud vs Local Architecture Battle"
-summary: "Proposed hands-on companion to “Local AI: What Can We Actually Run Ourselves?”. The exercise and date are still being developed."
+summary: "Allocate workloads between device and cloud using data sensitivity, quality, latency, and budget."
 track: "engineering"
 domain: "operate-ai"
 format: ["workshop"]

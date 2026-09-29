@@ -1,0 +1,10 @@
+id: "p27-workshop"
+pairId: "P27"
+title: "Threat-Model an AI Supply Chain"
+summary: "Threat-model a sample deployment and prioritize provenance, permissions, and review controls."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-03"
+editorialOrder: 1

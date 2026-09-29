@@ -1,7 +1,7 @@
 id: "p15-workshop"
 pairId: "P15"
 title: "The Right Model for the Right Job"
-summary: "Proposed hands-on companion to “Small Models, Big Models and Model Cascades”. The exercise and date are still being developed."
+summary: "Route a set of tasks across models, then defend quality thresholds, fallback, latency, and cost."
 track: "deep-dive"
 domain: "operate-ai"
 format: ["workshop"]
