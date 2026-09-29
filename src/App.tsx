@@ -49,6 +49,7 @@ function SessionCard({ session: s }: { session: Session }) {
           `Target: ${monthLabel(sessionMonth(s))}`
         )}
       </div>
+      {s.location && <p className="card-meta">Location: {s.location}</p>}
       {s.status === "cancelled" && s.reason && <p>{s.reason}</p>}
     </article>
   );
@@ -203,6 +204,7 @@ export function App() {
                 ? dateLabel(next.startsAt)
                 : "Explore the proposals below. We’ll add dates as the programme takes shape."}
             </p>
+            {next?.location && <p>Location: {next.location}</p>}
           </div>
           {next ? (
             <a className="button" href={`#${next.id}`}>

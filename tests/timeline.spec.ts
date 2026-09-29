@@ -10,6 +10,7 @@ for (const width of [360, 768, 1440]) {
       page.getByRole("heading", { name: "No date confirmed yet." }),
     ).toBeVisible();
     await expect(page.locator(".session-card")).toHaveCount(16);
+    await expect(page.locator(".session-card .status", { hasText: "Proposed" })).toHaveCount(16);
     await expect(page.locator(".month-chapter")).toHaveCount(9);
     expect(
       await page.evaluate(
@@ -33,6 +34,10 @@ for (const width of [360, 768, 1440]) {
     ).toBeFocused();
     await page.keyboard.press("Enter");
     await expect(page.locator("#season")).toBeFocused();
+    if (width !== 360) {
+      await page.locator(".season-matrix:visible").first().getByRole("link", { name: /October 2026, Foundations/ }).click();
+      await expect(page.locator('[id="2026-10-foundations"]')).toBeFocused();
+    }
     if (width === 360) {
       await page
         .getByRole("navigation", { name: "Jump to month" })

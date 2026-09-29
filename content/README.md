@@ -7,7 +7,8 @@ Run `npm run content:validate` after edits, or restart `npm run dev`. This check
 - `proposed`: use `targetMonth: "YYYY-MM"`; do not add a date.
 - `scheduled` or `completed`: remove `targetMonth` and provide a verified ISO `startsAt` with offset, for example `2026-10-15T12:00:00+02:00` (illustrative syntax only).
 - `cancelled`: retain exactly one of `startsAt` or `targetMonth`, with an optional reason.
+- Add `location` when the public venue or online location is verified. Do not publish private meeting links.
 - Keep IDs stable, public summaries readable, and formats separate from audience tracks.
 - Presenter fields, private links, and unknown properties are rejected by the strict schema.
 
-The 22 unplaced pairs and prior-coverage notes remain in the editorial board. They are not automatically published by the application. Review draft copy and months before a public launch. No deployment workflow is enabled in this slice.
+The 22 unplaced pairs and prior-coverage notes remain in the editorial board. They are not automatically published by the application. Changes merged into `main` are published by the GitHub Pages workflow after validation and browser checks.

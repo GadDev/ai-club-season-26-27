@@ -26,6 +26,7 @@ const base = {
   format: z
     .array(z.enum(["talk", "workshop", "demo", "lab", "discussion"]))
     .min(1),
+  location: z.string().trim().min(1).optional(),
   editorialOrder: z.number().int().nonnegative(),
 };
 const instant = z.iso.datetime({ offset: true });

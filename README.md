@@ -8,7 +8,9 @@ The release sequence is deliberately small:
 2. **Voting:** let each eligible SFEIR account holder choose one proposed topic under clear rules.
 3. **Materials:** provide approved presentations and replays, initially as links.
 
-The repository contains a **working V1 development slice**: a responsive nine-month timeline, 16 separate draft talk/workshop proposals, validated YAML content, and the Signal Index design. There are no verified scheduled events; the page says so explicitly. Public deployment is not enabled.
+The repository contains a **working V1 timeline**: a responsive nine-month timeline, 16 separate draft talk/workshop proposals, validated YAML content, and the Signal Index design. There are no verified scheduled events; the page says so explicitly. The GitHub Pages workflow builds, validates, and tests the programme before publication.
+
+Public programme: https://gaddev.github.io/ai-club-season-26-27/
 
 ## Run locally
 
@@ -40,4 +42,8 @@ The build validates content and TypeScript before producing `dist/`. CI runs the
 - [Visual references](design/references/README.md): moodboard, one-sheet UI specimen, desktop and mobile pages, plus future voting and replay concepts.
 - [Season board](SEASON_BOARD.md): eight tentative month placements, 22 more candidate pairs, prior coverage, and a separate confirmed-event lane.
 
-Next: review the draft programme, refine the implemented UI against the references, and enable GitHub Pages when the public content is ready.
+## Publishing
+
+In repository Settings → Pages, select **GitHub Actions** as the source. Pushes to `main` run **Publish programme**; deployment follows a successful production build, content tests, and browser checks. The workflow can also be run manually.
+
+Next: confirm the first session’s topic, date, Luxembourg-local time, and public location. Until then, all entries remain proposals.
