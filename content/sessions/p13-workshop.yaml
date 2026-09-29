@@ -1,0 +1,10 @@
+id: "p13-workshop"
+pairId: "P13"
+title: "Design an Enterprise AI Platform"
+summary: "Design a gateway boundary and defend where authentication, limits, fallback, and audit belong."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-11"
+editorialOrder: 1

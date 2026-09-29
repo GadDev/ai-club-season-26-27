@@ -1,0 +1,10 @@
+id: "p30-workshop"
+pairId: "P30"
+title: "AI Architecture Court"
+summary: "Argue for or against fictional product proposals and select a simpler design where appropriate."
+track: "foundations"
+domain: "understand-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-06"
+editorialOrder: 1

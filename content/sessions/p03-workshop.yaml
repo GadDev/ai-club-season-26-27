@@ -1,0 +1,10 @@
+id: "p03-workshop"
+pairId: "P03"
+title: "Temperature, Sampling and Randomness Lab"
+summary: "Run the same task with different sampling settings and record variation, quality, and failure cases."
+track: "foundations"
+domain: "understand-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-11"
+editorialOrder: 1

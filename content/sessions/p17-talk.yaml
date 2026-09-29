@@ -1,0 +1,10 @@
+id: "p17-talk"
+pairId: "P17"
+title: "Human-in-the-Loop: How Much Autonomy Is Too Much?"
+summary: "Decide which AI actions need review, escalation, or a firm stop."
+track: "engineering"
+domain: "build-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 2

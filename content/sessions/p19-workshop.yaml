@@ -1,7 +1,7 @@
 id: "p19-workshop"
 pairId: "P19"
 title: "AI Evaluation Tournament"
-summary: "Proposed hands-on companion to “Evals: Stop Saying “The New Prompt Feels Better””. The exercise and date are still being developed."
+summary: "Create a small evaluation set and score competing changes against realistic failure cases."
 track: "engineering"
 domain: "operate-ai"
 format: ["workshop"]

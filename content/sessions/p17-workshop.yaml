@@ -1,0 +1,10 @@
+id: "p17-workshop"
+pairId: "P17"
+title: "Draw the Approval Boundary"
+summary: "Mark approval points on a workflow and test what happens during delay, rejection, or tool failure."
+track: "engineering"
+domain: "build-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 3

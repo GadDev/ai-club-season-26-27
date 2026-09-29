@@ -1,0 +1,10 @@
+id: "p26-workshop"
+pairId: "P26"
+title: "Break the Guardrails: red vs blue"
+summary: "Red and blue teams test a bounded system, record bypasses, and strengthen deterministic controls."
+track: "engineering"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-05"
+editorialOrder: 1

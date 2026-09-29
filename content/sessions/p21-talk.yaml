@@ -1,0 +1,10 @@
+id: "p21-talk"
+pairId: "P21"
+title: "AI FinOps: Where Did Our Token Budget Go?"
+summary: "Track the drivers of AI cost while keeping quality and latency visible."
+track: "engineering"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-04"
+editorialOrder: 0

@@ -1,0 +1,10 @@
+id: "p07-talk"
+pairId: "P07"
+title: "Hermes Agent: Anatomy of a Modern Autonomous Agent"
+summary: "Dissect the runtime, memory, tools, and control boundaries of an autonomous agent."
+track: "engineering"
+domain: "frontier"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-02"
+editorialOrder: 0

@@ -1,0 +1,10 @@
+id: "p12-talk"
+pairId: "P12"
+title: "Voice AI: From Chatbots to Real-Time Conversations"
+summary: "Understand turn-taking, interruption, latency, and recovery in spoken interfaces."
+track: "foundations"
+domain: "frontier"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-04"
+editorialOrder: 0

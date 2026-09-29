@@ -1,0 +1,10 @@
+id: "p16-talk"
+pairId: "P16"
+title: "Durable AI: What Happens When a Task Runs for Hours?"
+summary: "Apply workflow ideas such as checkpoints, idempotency, and recovery to long-running tasks."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-01"
+editorialOrder: 0

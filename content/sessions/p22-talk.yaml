@@ -1,0 +1,10 @@
+id: "p22-talk"
+pairId: "P22"
+title: "Can We Trust AI Benchmarks?"
+summary: "Learn what benchmark scores measure and how task selection or leakage can mislead."
+track: "foundations"
+domain: "understand-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-03"
+editorialOrder: 0

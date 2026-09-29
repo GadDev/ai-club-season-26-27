@@ -1,0 +1,10 @@
+id: "p08-workshop"
+pairId: "P08"
+title: "Human vs Browser Agent Olympics"
+summary: "Give a human and an agent the same bounded tasks; compare accuracy, time, and recovery."
+track: "foundations"
+domain: "build-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-01"
+editorialOrder: 1

@@ -1,0 +1,10 @@
+id: "p07-workshop"
+pairId: "P07"
+title: "Mission Hermes: Give the Agent a Real Objective"
+summary: "Scope a multi-step mission, define success and stop conditions, and inspect where human control belongs."
+track: "engineering"
+domain: "frontier"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-02"
+editorialOrder: 1

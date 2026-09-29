@@ -1,0 +1,10 @@
+id: "p06-talk"
+pairId: "P06"
+title: "Prompting vs RAG vs Fine-Tuning vs Tools: Which One?"
+summary: "Diagnose an AI feature before choosing prompting, retrieval, adaptation, or tool use."
+track: "engineering"
+domain: "build-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 0

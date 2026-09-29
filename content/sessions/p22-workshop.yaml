@@ -1,0 +1,10 @@
+id: "p22-workshop"
+pairId: "P22"
+title: "Design a Benchmark That Doesn't Lie"
+summary: "Design examples and scoring rules that expose a model weakness hidden by a headline score."
+track: "foundations"
+domain: "understand-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-03"
+editorialOrder: 1

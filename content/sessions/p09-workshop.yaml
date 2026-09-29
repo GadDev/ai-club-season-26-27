@@ -1,0 +1,10 @@
+id: "p09-workshop"
+pairId: "P09"
+title: "Human Prompt vs DSPy Optimization"
+summary: "Define one measurable task, compare a hand-written baseline with optimization, and inspect errors."
+track: "engineering"
+domain: "develop-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 1

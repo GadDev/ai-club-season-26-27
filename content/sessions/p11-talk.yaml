@@ -1,0 +1,10 @@
+id: "p11-talk"
+pairId: "P11"
+title: "Synthetic Data: When AI Creates the Data AI Needs"
+summary: "Explore where generated examples help testing and where they distort the data distribution."
+track: "engineering"
+domain: "build-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 2

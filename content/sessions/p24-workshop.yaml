@@ -1,0 +1,10 @@
+id: "p24-workshop"
+pairId: "P24"
+title: "The €500K AI Incident Postmortem"
+summary: "Reconstruct a fictional incident timeline and propose measurable corrective actions."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-06"
+editorialOrder: 1

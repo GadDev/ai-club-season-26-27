@@ -8,7 +8,7 @@ The release sequence is deliberately small:
 2. **Voting:** let each eligible SFEIR account holder choose one proposed topic under clear rules.
 3. **Materials:** provide approved presentations and replays, initially as links.
 
-The repository contains a **working V1 timeline**: a responsive nine-month timeline, 16 separate draft talk/workshop proposals, public session-detail and About pages, validated YAML content, and the Signal Index design. There are no verified scheduled events; the page says so explicitly. The GitHub Pages workflow builds, validates, and tests the programme before publication.
+The repository contains a **working V1 timeline**: a responsive nine-month timeline, all 30 candidate topic pairs as 60 separate draft talk/workshop proposals, public session-detail and About pages, validated YAML content, and the Signal Index design. There are no verified scheduled events; the page says so explicitly. The GitHub Pages workflow builds, validates, and tests the programme before publication. The proposals are an editorial backlog, not a commitment to deliver 60 events.
 
 Public programme: https://gaddev.github.io/ai-club-season-26-27/
 
@@ -40,7 +40,7 @@ The build validates content and TypeScript before producing `dist/`. CI runs the
 - [Art direction](ART_DIRECTION.md): explored visual branches and the selected Signal Index direction.
 - [Design system](DESIGN_SYSTEM.md): the selected Signal Index direction; [implementation guide](design/README.md) for foundations, typography, components, icons and layouts; [CSS tokens](design/tokens.css).
 - [Visual references](design/references/README.md): moodboard, one-sheet UI specimen, desktop and mobile pages, plus future voting and replay concepts.
-- [Season board](SEASON_BOARD.md): eight tentative month placements, 22 more candidate pairs, prior coverage, and a separate confirmed-event lane.
+- [Season board](SEASON_BOARD.md): all 30 tentative pair placements across the three tracks, prior coverage, capacity notes, and a separate confirmed-event lane.
 
 ## Publishing
 

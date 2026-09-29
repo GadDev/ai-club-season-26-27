@@ -1,0 +1,10 @@
+id: "p26-talk"
+pairId: "P26"
+title: "Guardrails: Protection or Security Theatre?"
+summary: "Separate useful validation and authorization controls from claims a model cannot enforce alone."
+track: "engineering"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-05"
+editorialOrder: 0

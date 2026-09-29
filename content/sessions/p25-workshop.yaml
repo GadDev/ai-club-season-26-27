@@ -1,0 +1,10 @@
+id: "p25-workshop"
+pairId: "P25"
+title: "Prompt Injection Capture-the-Flag"
+summary: "Investigate injected content in a sandbox and test whether tool permissions and review gates contain it."
+track: "engineering"
+domain: "develop-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-03"
+editorialOrder: 3

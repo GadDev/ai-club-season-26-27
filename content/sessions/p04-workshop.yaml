@@ -1,0 +1,10 @@
+id: "p04-workshop"
+pairId: "P04"
+title: "The Reasoning Budget Challenge"
+summary: "Allocate limited reasoning time across easy and hard tasks, then compare accuracy and latency."
+track: "foundations"
+domain: "understand-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-02"
+editorialOrder: 1

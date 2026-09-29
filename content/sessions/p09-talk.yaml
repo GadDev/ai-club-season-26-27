@@ -1,0 +1,10 @@
+id: "p09-talk"
+pairId: "P09"
+title: "Can We Automate Prompt Engineering? DSPy and Optimization"
+summary: "Replace prompt tweaking by intuition with examples, metrics, and repeatable optimization."
+track: "engineering"
+domain: "develop-with-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 0

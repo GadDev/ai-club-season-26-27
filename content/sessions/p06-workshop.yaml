@@ -1,0 +1,10 @@
+id: "p06-workshop"
+pairId: "P06"
+title: "Choose Your AI Architecture Challenge"
+summary: "Match failure scenarios to interventions and defend the cheapest test that could validate each choice."
+track: "engineering"
+domain: "build-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 1

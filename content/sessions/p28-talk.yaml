@@ -1,0 +1,10 @@
+id: "p28-talk"
+pairId: "P28"
+title: "Who Is Your AI Allowed to Be? Identity, Permissions and Least Privilege"
+summary: "Trace how agent identity and delegated access cross user, model, and tool boundaries."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 0

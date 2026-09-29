@@ -1,0 +1,10 @@
+id: "p11-workshop"
+pairId: "P11"
+title: "Build, Attack and Validate a Synthetic Dataset"
+summary: "Generate edge cases, audit leakage and bias, and decide which examples deserve human review."
+track: "engineering"
+domain: "build-with-ai"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 3

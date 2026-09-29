@@ -1,0 +1,10 @@
+id: "p12-workshop"
+pairId: "P12"
+title: "Design a Voice-First AI Experience"
+summary: "Sketch a voice task, simulate interruptions, and design a graceful fallback when recognition fails."
+track: "foundations"
+domain: "frontier"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-04"
+editorialOrder: 1

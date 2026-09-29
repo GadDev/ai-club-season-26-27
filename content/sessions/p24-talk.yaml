@@ -1,0 +1,10 @@
+id: "p24-talk"
+pairId: "P24"
+title: "AI Incident Stories: How Intelligent Systems Fail"
+summary: "Read an AI failure as a system incident with causes, signals, impact, and decisions."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-06"
+editorialOrder: 0
