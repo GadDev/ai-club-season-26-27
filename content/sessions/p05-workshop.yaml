@@ -1,0 +1,10 @@
+id: "p05-workshop"
+pairId: "P05"
+title: "Design a Multimodal Assistant"
+summary: "Proposed hands-on companion to “Multimodal AI: When Models Can See, Hear and Speak”. The exercise and date are still being developed."
+track: "foundations"
+domain: "frontier"
+format: ["workshop"]
+status: "proposed"
+targetMonth: "2027-05"
+editorialOrder: 1

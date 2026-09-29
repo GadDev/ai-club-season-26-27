@@ -1,0 +1,10 @@
+id: "p02-talk"
+pairId: "P02"
+title: "Embeddings: How AI Turns Meaning Into Coordinates"
+summary: "See how semantic representations support similarity and retrieval."
+track: "foundations"
+domain: "understand-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-12"
+editorialOrder: 0

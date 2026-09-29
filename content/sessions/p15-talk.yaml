@@ -1,0 +1,10 @@
+id: "p15-talk"
+pairId: "P15"
+title: "Small Models, Big Models and Model Cascades"
+summary: "Decide when a smaller model is enough and when to route to a larger one."
+track: "deep-dive"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-02"
+editorialOrder: 0

@@ -1,0 +1,10 @@
+id: "p19-talk"
+pairId: "P19"
+title: "Evals: Stop Saying “The New Prompt Feels Better”"
+summary: "Design evidence that shows whether a change actually improves an AI workflow."
+track: "engineering"
+domain: "operate-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-03"
+editorialOrder: 0

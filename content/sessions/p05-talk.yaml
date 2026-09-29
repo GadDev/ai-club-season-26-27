@@ -1,0 +1,10 @@
+id: "p05-talk"
+pairId: "P05"
+title: "Multimodal AI: When Models Can See, Hear and Speak"
+summary: "Explore what changes when an application combines text, image, and audio."
+track: "foundations"
+domain: "frontier"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2027-05"
+editorialOrder: 0

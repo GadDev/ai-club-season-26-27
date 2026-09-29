@@ -1,0 +1,10 @@
+id: "p01-talk"
+pairId: "P01"
+title: "How Does an LLM Actually Work? Without the Maths"
+summary: "Build a practical mental model of tokens, prediction, and attention."
+track: "foundations"
+domain: "understand-ai"
+format: ["talk"]
+status: "proposed"
+targetMonth: "2026-10"
+editorialOrder: 0
