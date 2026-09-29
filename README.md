@@ -5,7 +5,7 @@ A home for the SFEIR Luxembourg AI Club programme from **October 2026 through Ju
 The release sequence is deliberately small:
 
 1. **Timeline:** display the whole season, distinguishing proposed topics from confirmed events.
-2. **Voting:** let eligible SFEIR account holders choose among proposals under agreed rules.
+2. **Voting:** let each eligible SFEIR account holder choose one proposed topic under clear rules.
 3. **Materials:** provide approved presentations and replays, initially as links.
 
 The repository is at **V0: map the programme**. It contains product documents; no schedule, application code, voting system, media hosting, or deployment exists yet.
