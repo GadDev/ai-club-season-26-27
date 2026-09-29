@@ -13,6 +13,12 @@ cream=(a[:,:,0]>165)&(a[:,:,1]>165)&(a[:,:,2]>155)
 zone=np.zeros((h,w),bool)
 for x0,y0,x1,y1 in [(20,12,550,276),(565,38,815,215),(566,215,1000,245),(1185,28,1365,158),(1260,176,1367,277)]:zone[y0:y1,x0:x1]=True
 cream &= zone
+# Exclude the paper seam that enters the subtitle bounding region.
+components, count = ndimage.label(cream)
+for label in range(1, count + 1):
+ ys, xs = np.where(components == label)
+ if xs.min() > 815 and ys.min() >= 215 and len(xs) > 120:
+  cream[components == label] = False
 orange=(a[:,:,0]>155)&(a[:,:,1]<145)&(a[:,:,2]<110)
 zone[:]=False
 zone[190:255,20:220]=True
