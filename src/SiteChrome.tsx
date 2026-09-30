@@ -11,8 +11,11 @@ export function SiteHeader({ page = "season" }: { page?: string }) {
       </div>
       <nav className="reference-nav" aria-label="Main">
         <a className="reference-home" href="?">SFEIR / LUXEMBOURG</a>
-        <div><a href="?#season" aria-current={page === "season" ? "page" : undefined}>Season</a>
-        <a href="?page=about" aria-current={page === "about" ? "page" : undefined}>About</a></div>
+        <div>
+          <a href="?#season" aria-current={page === "season" ? "page" : undefined}>Season</a>
+          <a href="?page=catalog" aria-current={page === "catalog" ? "page" : undefined}>Catalog</a>
+          <a href="?page=about" aria-current={page === "about" ? "page" : undefined}>About</a>
+        </div>
       </nav>
     </header>
   );
@@ -31,6 +34,7 @@ export function SiteFooter() {
         </div>
         <nav aria-label="Footer">
           <a href="?#season">Explore the season ↗</a>
+          <a href="?page=catalog">Explore the catalog ↗</a>
           <a href="?page=about">About the club ↗</a>
           <a href="?page=voting">Voting preview ↗</a>
           <a href="?page=materials">Materials preview ↗</a>
