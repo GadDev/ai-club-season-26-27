@@ -42,6 +42,16 @@ The build validates content and TypeScript before producing `dist/`. CI runs the
 - [Visual references](design/references/README.md): moodboard, one-sheet UI specimen, desktop and mobile pages, plus future voting and replay concepts.
 - [Season board](docs/SEASON_BOARD.md): all 30 tentative pair placements across the three tracks, prior coverage, capacity notes, and a separate confirmed-event lane.
 
+## Contributing and project policies
+
+Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), follow the [Code of Conduct](CODE_OF_CONDUCT.md), and use the repository issue forms for bugs, features, and session proposals. Security issues must follow [SECURITY.md](SECURITY.md), not the public issue tracker. General support expectations are documented in [SUPPORT.md](SUPPORT.md).
+
+This repository uses a split license:
+
+- application source code is available under the [MIT License](LICENSE);
+- original educational, editorial, and eligible design content is available under [CC BY 4.0](CONTENT_LICENSE.md);
+- third-party assets, trademarks, fonts, screenshots, and reference material keep their original rights and are not automatically relicensed.
+
 ## Publishing
 
 In repository Settings → Pages, select **GitHub Actions** as the source. Pushes to `main` run **Publish programme**; deployment follows a successful production build, content tests, and browser checks. The workflow can also be run manually.

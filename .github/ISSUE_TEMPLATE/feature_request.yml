@@ -1,0 +1,43 @@
+name: Feature request
+description: Suggest an improvement to the AI Club website or contributor workflow
+title: "[Feature]: "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What user or contributor need are we trying to address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed outcome
+      description: Describe the behaviour or experience you would like, without over-prescribing implementation.
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Primary audience
+      options:
+        - AI Club attendee
+        - Presenter / facilitator
+        - Programme organiser
+        - Repository contributor
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. What simpler options or workarounds have you considered?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and pull requests for similar proposals.
+          required: true
