@@ -1,9 +1,11 @@
 import { useMemo, useState } from "react";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import catalogData, { type CatalogTopic, type CatalogTrack } from "./content/catalog";
+import { catalogProgrammes } from "./content/catalog-programmes";
 import "./CatalogPage.css";
 
 type Track = CatalogTrack;
+type View = "track" | "programme";
 
 const topics: CatalogTopic[] = catalogData;
 const ALL = "All";
@@ -27,12 +29,51 @@ const labelFromSlug = (value: string) =>
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
 
+function TopicCard({ topic }: { topic: CatalogTopic }) {
+  return (
+    <article
+      className="catalog-topic"
+      id={`catalog-${topic.id.toLowerCase()}`}
+    >
+      <div className="catalog-topic-meta">
+        <span>{topic.id}</span>
+        <span>{labelFromSlug(topic.format)}</span>
+      </div>
+      <h3>{topic.title}</h3>
+      <p>{topic.description}</p>
+      <div className="catalog-topic-context">
+        <span>{labelFromSlug(topic.category)}</span>
+        <span>{topic.curriculum_status}</span>
+        <span>{topic.durability}</span>
+      </div>
+      <details>
+        <summary>Curriculum context</summary>
+        <dl>
+          <div>
+            <dt>Voting</dt>
+            <dd>{topic.voting_status}</dd>
+          </div>
+          <div>
+            <dt>Reference programmes</dt>
+            <dd>{topic.programmes.join(", ")}</dd>
+          </div>
+          <div>
+            <dt>Reference months</dt>
+            <dd>{topic.months.join(", ")}</dd>
+          </div>
+        </dl>
+      </details>
+    </article>
+  );
+}
+
 export default function CatalogPage() {
   const [query, setQuery] = useState("");
   const [track, setTrack] = useState<string>(ALL);
   const [theme, setTheme] = useState(ALL);
   const [format, setFormat] = useState(ALL);
   const [durability, setDurability] = useState(ALL);
+  const [view, setView] = useState<View>("track");
 
   const themes = useMemo(
     () => [...new Set(topics.map((topic) => topic.category))].sort(),
@@ -78,6 +119,30 @@ export default function CatalogPage() {
   const visibleGroups = groupedTopics.filter(
     (group) => group.topics.length > 0 || track === group.id,
   );
+
+  const programmeGroups = useMemo(
+    () =>
+      catalogProgrammes
+        .map((programme) => {
+          const programmeTopics = filteredTopics.filter((topic) =>
+            topic.programmes.includes(programme.name),
+          );
+          return {
+            ...programme,
+            topics: programmeTopics,
+            trackGroups: trackMeta
+              .map((meta) => ({
+                ...meta,
+                topics: programmeTopics.filter(
+                  (topic) => topic.track === meta.id,
+                ),
+              }))
+              .filter((group) => group.topics.length > 0),
+          };
+        })
+        .filter((programme) => programme.topics.length > 0),
+    [filteredTopics],
+  );
   const filtersActive =
     Boolean(query) ||
     track !== ALL ||
@@ -113,8 +178,10 @@ export default function CatalogPage() {
             </h1>
             <p>
               A read-only index of every candidate topic considered for the AI
-              Club season. Explore the ideas by track, theme, format, or keyword
-              without implying that a topic is scheduled.
+              Club season. Explore the ideas by track, theme, format, or
+              keyword, or switch to the programme view to see how each
+              reference curriculum groups them, without implying that a topic
+              is scheduled.
             </p>
           </div>
           <aside className="catalog-stats" aria-label="Catalog summary">
@@ -137,11 +204,15 @@ export default function CatalogPage() {
           </aside>
         </section>
 
-        <section className="catalog-controls" aria-labelledby="catalog-controls-title">
+        <section
+          className="catalog-controls"
+          aria-labelledby="catalog-controls-heading"
+        >
+          <h2 id="catalog-controls-heading" className="sr-only">
+            Filter and search the catalog
+          </h2>
           <div className="catalog-search">
-            <label id="catalog-controls-title" htmlFor="catalog-query">
-              Find a topic
-            </label>
+            <label htmlFor="catalog-query">Find a topic</label>
             <div className="catalog-search-field">
               <input
                 id="catalog-query"
@@ -227,6 +298,23 @@ export default function CatalogPage() {
             <output aria-live="polite">
               Showing {filteredTopics.length} / {topics.length} topics
             </output>
+            <fieldset className="catalog-view-toggle">
+              <legend>View</legend>
+              <button
+                type="button"
+                aria-pressed={view === "track"}
+                onClick={() => setView("track")}
+              >
+                By track
+              </button>
+              <button
+                type="button"
+                aria-pressed={view === "programme"}
+                onClick={() => setView("programme")}
+              >
+                By programme
+              </button>
+            </fieldset>
           </header>
 
           {filteredTopics.length === 0 ? (
@@ -240,6 +328,63 @@ export default function CatalogPage() {
               <button type="button" className="button" onClick={resetFilters}>
                 Reset filters
               </button>
+            </div>
+          ) : view === "programme" ? (
+            <div className="catalog-programme-list">
+              {programmeGroups.map((programme) => (
+                <section
+                  className="catalog-programme"
+                  key={programme.code}
+                  aria-labelledby={`catalog-${programme.code.toLowerCase()}-title`}
+                >
+                  <header className="catalog-programme-heading">
+                    <span className="catalog-programme-code" aria-hidden="true">
+                      {programme.code}
+                    </span>
+                    <div>
+                      <h2 id={`catalog-${programme.code.toLowerCase()}-title`}>
+                        {programme.name}
+                      </h2>
+                      <p className="catalog-programme-tagline">
+                        {programme.tagline}
+                      </p>
+                    </div>
+                    <span className="catalog-programme-count">
+                      {programme.topics.length} topics
+                    </span>
+                  </header>
+                  <p className="catalog-programme-description">
+                    {programme.description}
+                  </p>
+                  <div
+                    className={`catalog-track-columns ${programme.trackGroups.length === 1 ? "single-track" : ""}`}
+                  >
+                    {programme.trackGroups.map((group) => (
+                      <section
+                        className={`catalog-track-column ${group.className}`}
+                        key={group.id}
+                        aria-labelledby={`catalog-${programme.code.toLowerCase()}-${group.id.toLowerCase()}-title`}
+                      >
+                        <header className="catalog-track-heading nested">
+                          <div>
+                            <h3
+                              id={`catalog-${programme.code.toLowerCase()}-${group.id.toLowerCase()}-title`}
+                            >
+                              {group.label}
+                            </h3>
+                            <span>{group.topics.length} topics</span>
+                          </div>
+                        </header>
+                        <div className="catalog-topic-list">
+                          {group.topics.map((topic) => (
+                            <TopicCard key={topic.id} topic={topic} />
+                          ))}
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+                </section>
+              ))}
             </div>
           ) : (
             <div
@@ -262,40 +407,7 @@ export default function CatalogPage() {
                   </header>
                   <div className="catalog-topic-list">
                     {group.topics.map((topic) => (
-                      <article
-                        className="catalog-topic"
-                        id={`catalog-${topic.id.toLowerCase()}`}
-                        key={topic.id}
-                      >
-                        <div className="catalog-topic-meta">
-                          <span>{topic.id}</span>
-                          <span>{labelFromSlug(topic.format)}</span>
-                        </div>
-                        <h3>{topic.title}</h3>
-                        <p>{topic.description}</p>
-                        <div className="catalog-topic-context">
-                          <span>{labelFromSlug(topic.category)}</span>
-                          <span>{topic.curriculum_status}</span>
-                          <span>{topic.durability}</span>
-                        </div>
-                        <details>
-                          <summary>Curriculum context</summary>
-                          <dl>
-                            <div>
-                              <dt>Voting</dt>
-                              <dd>{topic.voting_status}</dd>
-                            </div>
-                            <div>
-                              <dt>Reference programmes</dt>
-                              <dd>{topic.programmes.join(", ")}</dd>
-                            </div>
-                            <div>
-                              <dt>Reference months</dt>
-                              <dd>{topic.months.join(", ")}</dd>
-                            </div>
-                          </dl>
-                        </details>
-                      </article>
+                      <TopicCard key={topic.id} topic={topic} />
                     ))}
                   </div>
                 </section>

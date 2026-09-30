@@ -14,6 +14,7 @@ import {
 } from "./content/model";
 const sessions = data.sessions as Session[];
 const CatalogPage = lazy(() => import("./CatalogPage"));
+const ProgrammesPage = lazy(() => import("./ProgrammesPage"));
 function Arrow() {
   return (
     <svg
@@ -76,7 +77,7 @@ export function App() {
   const page = sessionId ? "session" : params.get("page") || "season";
   useEffect(() => {
     const selected = sessions.find((s) => s.id === sessionId);
-    document.title = `${selected?.title || { about: "About", catalog: "Topic Catalog", voting: "Voting preview", materials: "Materials preview" }[page] || "Season 26–27"} — AI Club SFEIR Luxembourg`;
+    document.title = `${selected?.title || { about: "About", catalog: "Topic Catalog", programmes: "Reference Programmes", voting: "Voting preview", materials: "Materials preview" }[page] || "Season 26–27"} — AI Club SFEIR Luxembourg`;
   }, [page, sessionId]);
   if (page === "catalog")
     return (
@@ -93,6 +94,23 @@ export function App() {
         }
       >
         <CatalogPage />
+      </Suspense>
+    );
+  if (page === "programmes")
+    return (
+      <Suspense
+        fallback={
+          <>
+            <SiteHeader page="programmes" />
+            <main className="page-content">
+              <p className="eyebrow">REFERENCE CURRICULA</p>
+              <h1>Loading programmes…</h1>
+            </main>
+            <SiteFooter />
+          </>
+        }
+      >
+        <ProgrammesPage />
       </Suspense>
     );
   if (page !== "season")

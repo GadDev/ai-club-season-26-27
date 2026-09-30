@@ -13,10 +13,11 @@ for (const width of [360, 1440]) {
     ).toBeVisible();
     await expect(page.locator(".catalog-topic")).toHaveCount(693);
     await expect(page.getByText("Showing 693 / 693 topics")).toBeVisible();
-    await expect(page.getByRole("link", { name: "Catalog" })).toHaveAttribute(
-      "aria-current",
-      "page",
-    );
+    await expect(
+      page
+        .getByRole("navigation", { name: "Main" })
+        .getByRole("link", { name: "Catalog", exact: true }),
+    ).toHaveAttribute("aria-current", "page");
 
     expect(
       await page.evaluate(
@@ -38,15 +39,39 @@ for (const width of [360, 1440]) {
     await expect(page.locator(".catalog-topic")).toHaveCount(231);
     await expect(page.getByText("Showing 231 / 693 topics")).toBeVisible();
 
-    const violations = (
+    const trackViolations = (
       await new AxeBuilder({ page })
         .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
         .analyze()
     ).violations;
-    expect(violations).toEqual([]);
+    expect(trackViolations).toEqual([]);
 
     await page.screenshot({
       path: `test-results/catalog-${width}.png`,
+      fullPage: false,
+    });
+
+    await page.getByRole("button", { name: "All tracks" }).click();
+    await page.getByRole("button", { name: "By programme" }).click();
+    await expect(page.locator(".catalog-programme")).toHaveCount(9);
+    await expect(page.getByText("Showing 693 / 693 topics")).toBeVisible();
+    // Topics that belong to more than one programme render once per
+    // programme, so the card count matches total placements, not unique
+    // topics (see docs/ai_club_reference_curricula/QUALITY_CHECK.json).
+    await expect(page.locator(".catalog-topic")).toHaveCount(729);
+    await expect(
+      page.getByRole("heading", { name: "AI Engineering Foundations" }),
+    ).toBeVisible();
+
+    const programmeViolations = (
+      await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+        .analyze()
+    ).violations;
+    expect(programmeViolations).toEqual([]);
+
+    await page.screenshot({
+      path: `test-results/catalog-programme-view-${width}.png`,
       fullPage: false,
     });
   });
