@@ -5,14 +5,52 @@ export function SiteHeader({ page = "season" }: { page?: string }) {
   return (
     <header className="masthead" id="top">
       <div className="reference-hero">
-        <img src={heroReference} width="1672" height="941" fetchPriority="high"
-          alt="AI Club. Season 26–27. Ideas. Practice. Deeper understanding. The Signal Index: a nine-month journey from curiosity to real impact." />
-        <img className="hero-lettering" src={heroLettering} alt="" aria-hidden="true" width="1672" height="281" />
+        <img
+          src={heroReference}
+          width="1672"
+          height="941"
+          fetchPriority="high"
+          alt="AI Club. Season 26–27. Ideas. Practice. Deeper understanding. The Signal Index: a nine-month journey from curiosity to real impact."
+        />
+        <img
+          className="hero-lettering"
+          src={heroLettering}
+          alt=""
+          aria-hidden="true"
+          width="1672"
+          height="281"
+        />
       </div>
       <nav className="reference-nav" aria-label="Main">
-        <a className="reference-home" href="?">SFEIR / LUXEMBOURG</a>
-        <div><a href="?#season" aria-current={page === "season" ? "page" : undefined}>Season</a>
-        <a href="?page=about" aria-current={page === "about" ? "page" : undefined}>About</a></div>
+        <a className="reference-home" href="?">
+          SFEIR / LUXEMBOURG
+        </a>
+        <div>
+          <a
+            href="?#season"
+            aria-current={page === "season" ? "page" : undefined}
+          >
+            Season
+          </a>
+          <a
+            href="?page=catalog"
+            aria-current={page === "catalog" ? "page" : undefined}
+          >
+            Catalog
+          </a>
+          <a
+            href="?page=programmes"
+            aria-current={page === "programmes" ? "page" : undefined}
+          >
+            Programmes
+          </a>
+          <a
+            href="?page=about"
+            aria-current={page === "about" ? "page" : undefined}
+          >
+            About
+          </a>
+        </div>
       </nav>
     </header>
   );
@@ -31,6 +69,8 @@ export function SiteFooter() {
         </div>
         <nav aria-label="Footer">
           <a href="?#season">Explore the season ↗</a>
+          <a href="?page=catalog">Explore the catalog ↗</a>
+          <a href="?page=programmes">Explore the programmes ↗</a>
           <a href="?page=about">About the club ↗</a>
           <a href="?page=voting">Voting preview ↗</a>
           <a href="?page=materials">Materials preview ↗</a>
