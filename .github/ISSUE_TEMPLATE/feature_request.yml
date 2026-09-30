@@ -1,7 +1,8 @@
 name: Feature request
 description: Suggest an improvement to the AI Club website or contributor workflow
 title: "[Feature]: "
-labels: []
+labels:
+  - enhancement
 body:
   - type: textarea
     id: problem

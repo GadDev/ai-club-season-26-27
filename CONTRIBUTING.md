@@ -11,6 +11,7 @@ Thanks for helping improve **AI Club · Season 2026–2027**. Contributions may 
    - programme/content changes: [`content/README.md`](content/README.md)
    - product direction: [`docs/MISSION.md`](docs/MISSION.md) and [`docs/CONSTITUTION.md`](docs/CONSTITUTION.md)
    - visual work: [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md) and [`design/README.md`](design/README.md)
+   - CI/CD and merge rules: [`docs/CI_CD.md`](docs/CI_CD.md)
 
 ## Local setup
 
@@ -33,7 +34,7 @@ npm run test:e2e
 
 If your change does not affect browser behaviour, explain in the pull request why an end-to-end run is not relevant.
 
-## Branches and commits
+## Branches, commits, and pull request titles
 
 Use short, descriptive branch names such as:
 
@@ -44,6 +45,23 @@ Use short, descriptive branch names such as:
 - `chore/dependency-update`
 
 Prefer small commits with imperative messages that explain the intent of the change.
+
+Pull request titles are validated in CI and must follow this pattern:
+
+```text
+type(optional-scope): concise description
+```
+
+Accepted types are `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `build`, `perf`, and `revert`.
+
+Examples:
+
+```text
+feat(schedule): add session filters
+fix(nav): preserve focus on mobile
+docs: clarify content validation
+ci(deps): update GitHub Actions
+```
 
 ## Programme and editorial changes
 
@@ -76,6 +94,8 @@ A good pull request includes:
 - screenshots for visual changes;
 - known limitations or follow-up work;
 - links to related issues when applicable.
+
+Every pull request to `main` must pass the required `check` status and GitGuardian security check, and all review conversations must be resolved before merge. See [`docs/CI_CD.md`](docs/CI_CD.md) for the complete quality-gate and branch-rule model.
 
 Reviewers may ask for a change to be split if it combines unrelated concerns.
 

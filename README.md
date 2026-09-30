@@ -1,5 +1,7 @@
 # AI Club · Season 2026–2027
 
+[![CI](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/ci.yml/badge.svg)](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/ci.yml)
+
 A home for the SFEIR Luxembourg AI Club programme from **October 2026 through June 2027**, with three parallel tracks: **Foundations (Beginner)**, **Engineering (Practitioner)**, and **Deep Dive (Advanced)**.
 
 The release sequence is deliberately small:
@@ -30,7 +32,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-The build validates content and TypeScript before producing `dist/`. CI runs the build, date/status tests, and browser accessibility/navigation checks at mobile, tablet, and desktop widths. See [content editing](content/README.md).
+The build validates content and TypeScript before producing `dist/`. CI runs the build, date/status tests, dependency review, and browser accessibility/navigation checks at mobile, tablet, and desktop widths. See [content editing](content/README.md) and the [CI/CD quality-gate guide](docs/CI_CD.md).
 
 ## Product and design
 
@@ -44,7 +46,7 @@ The build validates content and TypeScript before producing `dist/`. CI runs the
 
 ## Contributing and project policies
 
-Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), follow the [Code of Conduct](CODE_OF_CONDUCT.md), and use the repository issue forms for bugs, features, and session proposals. Security issues must follow [SECURITY.md](SECURITY.md), not the public issue tracker. General support expectations are documented in [SUPPORT.md](SUPPORT.md).
+Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), follow the [Code of Conduct](CODE_OF_CONDUCT.md), and use the repository issue forms for bugs, features, and session proposals. Security issues must follow [SECURITY.md](SECURITY.md), not the public issue tracker. General support expectations are documented in [SUPPORT.md](SUPPORT.md). Repository automation, Dependabot, labels, and branch/PR quality rules are documented in [docs/CI_CD.md](docs/CI_CD.md).
 
 This repository uses a split license:
 

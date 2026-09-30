@@ -1,7 +1,9 @@
 name: Session or content proposal
 description: Propose or improve an AI Club talk, workshop, or programme topic
 title: "[Content]: "
-labels: []
+labels:
+  - content
+  - "area: content"
 body:
   - type: input
     id: topic
