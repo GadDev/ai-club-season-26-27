@@ -70,23 +70,24 @@ jobs:
       - name: End-to-end tests
         run: npm run test:e2e
 
-  dependency-review:
-    name: Dependency review
+  dependency-audit:
+    name: Dependency audit
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    permissions:
-      contents: read
     steps:
-      - name: Review dependency changes
-        if: github.event_name == 'pull_request'
-        uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          fail-on-severity: high
+          node-version-file: .nvmrc
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
 
   check:
     name: check
     if: always()
-    needs: [metadata, quality, e2e, dependency-review]
+    needs: [metadata, quality, e2e, dependency-audit]
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
@@ -95,10 +96,10 @@ jobs:
           METADATA_RESULT: ${{ needs.metadata.result }}
           QUALITY_RESULT: ${{ needs.quality.result }}
           E2E_RESULT: ${{ needs.e2e.result }}
-          DEPENDENCY_REVIEW_RESULT: ${{ needs.dependency-review.result }}
+          DEPENDENCY_AUDIT_RESULT: ${{ needs.dependency-audit.result }}
         shell: bash
         run: |
-          for result in "$METADATA_RESULT" "$QUALITY_RESULT" "$E2E_RESULT" "$DEPENDENCY_REVIEW_RESULT"; do
+          for result in "$METADATA_RESULT" "$QUALITY_RESULT" "$E2E_RESULT" "$DEPENDENCY_AUDIT_RESULT"; do
             if [[ "$result" != "success" ]]; then
               echo "::error::A required CI job did not succeed."
               exit 1

@@ -11,11 +11,17 @@ The gate succeeds only when all of these jobs succeed:
 - **PR metadata** — validates a Conventional Commit-style pull request title, for example `feat(schedule): add session filters`.
 - **Build and unit tests** — installs from the lockfile, validates content and TypeScript through the production build, and runs the test suite.
 - **Browser tests** — builds the site and runs the Playwright end-to-end suite in Chromium.
-- **Dependency review** — rejects newly introduced dependencies with known vulnerabilities rated high or critical.
+- **Dependency audit** — runs `npm audit --omit=dev --audit-level=high` against production dependencies and blocks high/critical known vulnerabilities.
 
 CI is intentionally triggered for pull requests rather than every feature-branch push. A pull request update already triggers the same validation, avoiding duplicate runs. The Pages workflow performs the production build and tests again on `main` immediately before deployment.
 
 GitHub Actions are pinned to immutable commit SHAs. Dependabot is responsible for proposing reviewed updates to those pins.
+
+### Dependency Review upgrade path
+
+GitHub's Dependency Review action provides a better PR-diff-aware dependency gate, but it requires GitHub Dependency Graph to be enabled for the repository. Dependency Graph is currently disabled here, so using the action would make every pull request fail before any dependency analysis could occur.
+
+If Dependency Graph is enabled later under repository security settings, replace or supplement the npm audit job with `actions/dependency-review-action` and fail on high severity. Keep the action pinned to an immutable commit SHA.
 
 ## Dependabot
 
