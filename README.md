@@ -34,13 +34,13 @@ The build validates content and TypeScript before producing `dist/`. CI runs the
 
 ## Product and design
 
-- [Mission](MISSION.md): purpose, tracks, and release sequence.
-- [Constitution](CONSTITUTION.md): product and editorial principles.
-- [Technical stack](TECH_STACK.md): V1 architecture and later system boundaries.
-- [Art direction](ART_DIRECTION.md): explored visual branches and the selected Signal Index direction.
-- [Design system](DESIGN_SYSTEM.md): the selected Signal Index direction; [implementation guide](design/README.md) for foundations, typography, components, icons and layouts; [CSS tokens](design/tokens.css).
+- [Mission](docs/MISSION.md): purpose, tracks, and release sequence.
+- [Constitution](docs/CONSTITUTION.md): product and editorial principles.
+- [Technical stack](docs/TECH_STACK.md): V1 architecture and later system boundaries.
+- [Art direction](docs/ART_DIRECTION.md): explored visual branches and the selected Signal Index direction.
+- [Design system](docs/DESIGN_SYSTEM.md): the selected Signal Index direction; [implementation guide](design/README.md) for foundations, typography, components, icons and layouts; [CSS tokens](design/tokens.css).
 - [Visual references](design/references/README.md): moodboard, one-sheet UI specimen, desktop and mobile pages, plus future voting and replay concepts.
-- [Season board](SEASON_BOARD.md): all 30 tentative pair placements across the three tracks, prior coverage, capacity notes, and a separate confirmed-event lane.
+- [Season board](docs/SEASON_BOARD.md): all 30 tentative pair placements across the three tracks, prior coverage, capacity notes, and a separate confirmed-event lane.
 
 ## Publishing
 
