@@ -13,10 +13,12 @@
 - [ ] Content / programme
 - [ ] Design / accessibility
 - [ ] Documentation
+- [ ] CI/CD / dependencies
 - [ ] Chore / maintenance
 
 ## Verification
 
+- [ ] PR title follows `type(optional-scope): concise description`
 - [ ] `npm run build`
 - [ ] `npm test`
 - [ ] `npm run test:e2e` (or explained below why it is not applicable)

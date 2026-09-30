@@ -82,7 +82,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-CI runs the production build, content tests, and Playwright checks on pushes and pull requests.
+CI runs the production build, content tests, production dependency audit, and Playwright checks on pushes and pull requests. See the [CI/CD quality-gate guide](docs/CI_CD.md) for Dependabot, labels, branch rules, and workflow details.
 
 ## Technology
 
@@ -110,6 +110,7 @@ Programme content lives in validated YAML. The application is a static Vite buil
 ### Engineering and governance
 
 - [Technical stack](docs/TECH_STACK.md) — V1 architecture and later system boundaries.
+- [CI/CD and quality gates](docs/CI_CD.md) — Dependabot, labels, Actions workflows, and branch/PR rules.
 - [Contributing](CONTRIBUTING.md) — development and contribution workflow.
 - [Code of Conduct](CODE_OF_CONDUCT.md) — community expectations.
 - [Security](SECURITY.md) — private reporting process for security issues.
