@@ -1,0 +1,62 @@
+name: Session or content proposal
+description: Propose or improve an AI Club talk, workshop, or programme topic
+title: "[Content]: "
+labels: []
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      placeholder: Context Engineering > Prompt Engineering
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Suggested level
+      options:
+        - Foundations / Beginner
+        - Engineering / Practitioner
+        - Deep Dive / Advanced
+        - Cross-track
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Suggested format
+      options:
+        - Talk
+        - Workshop
+        - Talk + workshop pair
+        - Debate / panel
+        - Demo / lab
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why this belongs in the season
+      description: Explain the engineering value, learning outcome, and why the topic is timely or foundational.
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: Possible outline
+      description: Optional. Add a short structure, demo idea, or workshop exercise.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources or references
+      description: Add authoritative sources for claims, standards, tools, or case studies where relevant.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I checked the existing season board and proposals for duplicates.
+          required: true
+        - label: I understand this is a proposal, not a confirmed event.
+          required: true
