@@ -1,0 +1,10 @@
+{
+  "programmes": 9,
+  "months_each": 9,
+  "candidate_topics_per_track_month": 3,
+  "placements_per_programme": 81,
+  "total_placements": 729,
+  "unique_topics": 693,
+  "invalid_track_month_cells": [],
+  "all_programmes_october_to_june": true
+}
